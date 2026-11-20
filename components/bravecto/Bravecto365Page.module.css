@@ -1,0 +1,1217 @@
+/* ============================================================================
+   components/bravecto/Bravecto365Page.module.css
+   "Da" của trang Bravecto 365 — CSS Module, phạm vi tuyệt đối, không đụng
+   globals.css dùng chung cho 30+ route.
+
+   HỆ MÀU (lấy từ bản thiết kế, xem mục 4 của yêu cầu):
+     nền navy   #071a33 → #0b1d3a
+     cyan nhấn  #29a9e1
+     xanh nút   #1f6fd0
+     tím huyệu  #5a2c8c
+     đỏ logo    #e2231a
+   Tất cả khai báo một lần trên `.page` rồi dùng qua var() — đổi màu chiến dịch
+   chỉ sửa 5 dòng.
+   ========================================================================== */
+
+.page {
+  --navy: #071a33;
+  --navy-soft: #0b1d3a;
+  --cyan: #29a9e1;
+  --blue: #1f6fd0;
+  --blue-bright: #2a7de0;
+  --purple: #5a2c8c;
+  --red: #e2231a;
+  --ink: #0b2a52;
+  --text-soft: rgba(222, 238, 252, 0.84);
+  --text-muted: rgba(188, 214, 238, 0.72);
+  --glass-bg: rgba(74, 144, 217, 0.32);
+  --glass-bg-strong: rgba(82, 156, 231, 0.4);
+  --glass-border: rgba(150, 200, 255, 0.5);
+  --glass-glow: 0 0 40px rgba(40, 140, 255, 0.3);
+
+  position: relative;
+  isolation: isolate;
+  background-color: var(--navy);
+  color: #ffffff;
+  /* Chặn scroll ngang: các cung tròn trang trí luôn thò ra ngoài mép. */
+  overflow-x: clip;
+}
+
+.page *,
+.page *::before,
+.page *::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: clamp(18px, 5vw, 72px);
+}
+
+.section {
+  position: relative;
+  padding-block: clamp(56px, 7.5vw, 132px);
+  /* Cắt các cung tròn ở mép section — nguồn scroll ngang duy nhất của trang. */
+  overflow: hidden;
+}
+
+/* ── Cung tròn trang trí ─────────────────────────────────────────────────── */
+
+.arc {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: rgba(27, 95, 176, 0.62);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.arcTopRight {
+  width: 42vw;
+  height: 42vw;
+  right: -17vw;
+  top: -13vw;
+  border-width: clamp(20px, 3vw, 40px);
+}
+
+.arcBottomLeft {
+  width: 34vw;
+  height: 34vw;
+  left: -15vw;
+  bottom: -13vw;
+  border-width: clamp(18px, 2.6vw, 36px);
+  opacity: 0.75;
+}
+
+.arcRight {
+  width: 30vw;
+  height: 30vw;
+  right: -13vw;
+  top: 8%;
+  border-width: clamp(18px, 2.6vw, 34px);
+  opacity: 0.6;
+}
+
+.arcLeft {
+  width: 36vw;
+  height: 36vw;
+  left: -19vw;
+  top: 22%;
+  border-width: clamp(20px, 3vw, 38px);
+  opacity: 0.55;
+}
+
+.arcBottomRight {
+  width: 30vw;
+  height: 30vw;
+  right: -14vw;
+  bottom: -8%;
+  border-width: clamp(18px, 2.6vw, 34px);
+  opacity: 0.5;
+}
+
+/* ── SECTION 0 — video intro ─────────────────────────────────────────────── */
+
+.intro {
+  position: relative;
+  width: 100%;
+  /* Bản thiết kế không để dải video cao đủ 16:9 (810px ở 1440) mà cắt bớt
+     còn ~490px — 34vw cho đúng tỉ lệ đó. `object-fit: cover` giữ nguyên cách
+     video lấp đầy khung, không méo hình. */
+  height: clamp(300px, 34vw, 520px);
+  max-height: 100vh;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.introVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+}
+
+/* Lớp chuyển sắc ĐỈNH khối video.
+
+   Navbar của site ở trạng thái "đầu trang" là trong suốt + chữ TRẮNG (xem
+   `.site-global-nav.liquid-glass-base:not(.is-active)` trong globals.css) vì
+   trang chủ đưa navbar lên nền hero tối. Khối video intro ở đây lại nền TRẮNG
+   ⇒ chữ trắng trên nền trắng, không đọc được. Không sửa Navbar (ràng buộc mục
+   10), nên trang tự tạo một dải navy mờ dần ở đỉnh video: navbar nằm trên nền
+   tối, chữ trắng đạt tương phản, và dải này đối xứng với `.introFade` ở đáy
+   nên trông có chủ đích chứ không phải một mảng che lỗi. */
+.introScrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(96px, 9vw, 132px);
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 26, 51, 0.95) 0%,
+    rgba(7, 26, 51, 0.82) 45%,
+    rgba(7, 26, 51, 0.34) 78%,
+    rgba(7, 26, 51, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hoà đáy video trắng vào hero navy — không lộ đường cắt. */
+.introFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: clamp(80px, 9vw, 120px);
+  background: linear-gradient(
+    to bottom,
+    rgba(7, 26, 51, 0) 0%,
+    rgba(7, 26, 51, 0.55) 52%,
+    var(--navy) 100%
+  );
+  pointer-events: none;
+}
+
+.introControls {
+  position: absolute;
+  right: clamp(12px, 3vw, 36px);
+  bottom: calc(clamp(80px, 9vw, 120px) + 12px);
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.introBtn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(9, 26, 48, 0.55);
+  color: #ffffff;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.introBtn:hover {
+  background: rgba(31, 111, 208, 0.9);
+  transform: translateY(-2px);
+}
+
+.introBtn:focus-visible {
+  outline: 3px solid #8ad9f7;
+  outline-offset: 3px;
+}
+
+.introPill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(clamp(80px, 9vw, 120px) + 18px);
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(7, 26, 51, 0.28);
+  animation: introPillPulse 2.4s ease-in-out infinite;
+}
+
+.introPill:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@keyframes introPillPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+.introPlayBig {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: clamp(64px, 7vw, 84px);
+  height: clamp(64px, 7vw, 84px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--blue);
+  cursor: pointer;
+  box-shadow: 0 14px 36px rgba(7, 26, 51, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.introPlayBig:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: #ffffff;
+}
+
+.introPlayBig:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
+
+/* ── SECTION 1 — hero ────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(28px, 3.4vw, 56px) clamp(48px, 7vw, 112px);
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  gap: clamp(24px, 3.5vw, 56px);
+  align-items: center;
+}
+
+.heroCopy {
+  min-width: 0;
+}
+
+.h1 {
+  margin: 0;
+  /* 3.85rem: "trọn vẹn 365 ngày." đo được 544px ở 61.6px trong cột 554px —
+     vừa đúng 2 dòng như bản thiết kế. 5rem (80px) làm dòng 2 gãy thành
+     "365" / "ngày." trên màn 1440. */
+  font-size: clamp(2.05rem, 4.3vw, 3.85rem);
+  line-height: 1.03;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.accentCyan {
+  color: var(--cyan);
+}
+
+.heroLead {
+  margin: clamp(14px, 1.8vw, 22px) 0 0;
+  max-width: 42ch;
+  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--text-soft);
+}
+
+.brandCard {
+  margin-top: clamp(18px, 2.4vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 26px);
+  width: fit-content;
+  max-width: 100%;
+  padding: clamp(11px, 1.3vw, 15px) clamp(14px, 1.7vw, 22px);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.7);
+}
+
+.bravectoMark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 0 0 auto;
+}
+
+.bravectoWord {
+  display: block;
+  color: var(--red);
+  font-size: clamp(19px, 2.1vw, 29px);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  transform: skewX(-7deg);
+}
+
+.bravectoPill {
+  display: block;
+  padding: 1px 12px 2px;
+  border-radius: 999px;
+  background: var(--red);
+  color: #ffffff;
+  font-size: clamp(10px, 0.95vw, 13px);
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+}
+
+.brandDivider {
+  width: 1px;
+  align-self: stretch;
+  min-height: 42px;
+  background: rgba(18, 60, 116, 0.18);
+  flex: 0 0 auto;
+}
+
+.brandClaim {
+  margin: 0;
+  color: #123c74;
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(16px, 2.2vw, 26px);
+}
+
+.btnPrimary,
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: clamp(13px, 1.05vw, 15px);
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btnPrimary {
+  background: var(--blue);
+  color: #ffffff;
+  box-shadow: 0 14px 30px -16px rgba(31, 111, 208, 0.95);
+}
+
+.btnPrimary:hover {
+  background: var(--blue-bright);
+  transform: translateY(-2px);
+}
+
+.btnGhost {
+  background: #e8f4ff;
+  color: var(--ink);
+}
+
+.btnGhost:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btnPrimary:focus-visible,
+.btnGhost:focus-visible {
+  outline: 3px solid #8ad9f7;
+  outline-offset: 3px;
+}
+
+.heroNote {
+  margin: clamp(12px, 1.6vw, 18px) 0 0;
+  max-width: 46ch;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.heroArt {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(320px, 40vw, 560px);
+}
+
+.dogA {
+  position: relative;
+  z-index: 1;
+  width: auto;
+  height: clamp(300px, 34vw, 520px);
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 44px rgba(0, 0, 0, 0.38));
+  animation: dogBob 5s ease-in-out infinite;
+}
+
+@keyframes dogBob {
+  0%,
+  100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.seal365 {
+  position: absolute;
+  z-index: 2;
+  top: clamp(0px, 1vw, 14px);
+  right: clamp(-4px, 0.5vw, 10px);
+  width: clamp(88px, 10.5vw, 142px);
+  height: auto;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.35));
+}
+
+.medal {
+  position: absolute;
+  z-index: 2;
+  left: clamp(-6px, -0.6vw, 4px);
+  bottom: clamp(0px, 1.6vw, 20px);
+  width: clamp(104px, 14vw, 180px);
+  height: auto;
+  transform: rotate(-12deg);
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.4));
+}
+
+/* ── Khối 2 cột dùng chung cho Section 2 ─────────────────────────────────── */
+
+.twoCol {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+
+.h2Upper {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.05vw, 2.9rem);
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+/* ── Thẻ kính 3 cột ─────────────────────────────────────────────────────── */
+
+.glassRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(30px, 3.6vw, 46px);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-glow);
+}
+
+.cell {
+  position: relative;
+  padding: clamp(38px, 4vw, 48px) clamp(10px, 1.6vw, 20px) clamp(16px, 2vw, 24px);
+  text-align: center;
+}
+
+.cell + .cell {
+  border-left: 1px solid rgba(190, 222, 255, 0.42);
+}
+
+/* Icon nằm VẮT NGANG mép trên thẻ: tâm icon trùng mép thẻ ⇒ nửa trên nhô ra. */
+.cellIcon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(44px, 4vw, 56px);
+  height: clamp(44px, 4vw, 56px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--blue);
+  box-shadow: 0 8px 20px rgba(4, 20, 40, 0.35);
+}
+
+.cellTitle {
+  margin: 0;
+  font-size: clamp(11px, 1.02vw, 13.5px);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.cellText {
+  margin: 8px 0 0;
+  font-size: clamp(11px, 0.95vw, 13px);
+  line-height: 1.55;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+/* ── Thẻ trắng trích dẫn ────────────────────────────────────────────────── */
+
+.quote {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.6vw, 20px);
+  margin: clamp(20px, 2.6vw, 30px) 0 0;
+  padding: clamp(14px, 1.6vw, 20px) clamp(16px, 2vw, 26px);
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--ink);
+  box-shadow: 0 18px 40px -26px rgba(0, 0, 0, 0.8);
+}
+
+.quoteImg {
+  flex: 0 0 auto;
+  width: auto;
+  height: auto;
+  max-width: clamp(76px, 9vw, 124px);
+  object-fit: contain;
+  /* Lấn nhẹ ra ngoài mép trái thẻ, đúng như bản thiết kế. */
+  margin-left: clamp(-30px, -2vw, -12px);
+  filter: drop-shadow(0 10px 16px rgba(4, 20, 40, 0.16));
+}
+
+.quoteText {
+  margin: 0;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.6;
+  font-weight: 500;
+  color: #16355c;
+  text-wrap: pretty;
+}
+
+/* Section 4: ảnh sang PHẢI, chữ bên trái. */
+.quoteImageEnd {
+  flex-direction: row-reverse;
+}
+
+.quoteImageEnd .quoteImg {
+  margin-left: 0;
+  margin-right: clamp(-30px, -2vw, -12px);
+}
+
+/* ── Khung video bác sĩ ─────────────────────────────────────────────────── */
+
+.mediaCol,
+.howMedia {
+  position: relative;
+  z-index: 1;
+}
+
+.videoFrame {
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  padding: clamp(8px, 0.85vw, 11px);
+  border-radius: 32px;
+  background: rgba(232, 240, 248, 0.9);
+  box-shadow: 0 28px 64px -28px rgba(0, 0, 0, 0.75);
+}
+
+.videoInner {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #08111f;
+}
+
+.videoEl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.videoPlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: rgba(7, 26, 51, 0.12);
+  cursor: pointer;
+}
+
+.videoPlay:focus-visible {
+  outline: 3px solid #8ad9f7;
+  outline-offset: -6px;
+}
+
+.videoPlayDot {
+  width: clamp(56px, 5.5vw, 72px);
+  height: clamp(56px, 5.5vw, 72px);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--blue);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.videoPlay:hover .videoPlayDot {
+  transform: scale(1.06);
+}
+
+/* ── SECTION 3 — chăm sóc chủ động ──────────────────────────────────────── */
+
+.centerHead {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 1.3vw, 16px);
+  text-align: center;
+}
+
+.eyebrowPill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: clamp(11px, 1vw, 13px);
+  font-weight: 800;
+}
+
+.h2Center {
+  margin: 0;
+  font-size: clamp(1.55rem, 3.25vw, 2.95rem);
+  line-height: 1.16;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-wrap: balance;
+}
+
+.pawDeco {
+  position: absolute;
+  right: clamp(-4px, 3vw, 96px);
+  top: clamp(-10px, -0.8vw, -4px);
+  color: rgba(255, 255, 255, 0.9);
+  transform: rotate(-8deg);
+}
+
+.careGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+  margin-top: clamp(26px, 3.4vw, 46px);
+}
+
+.careCard {
+  padding: clamp(16px, 1.8vw, 24px);
+  border-radius: 24px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.careCard:hover {
+  transform: translateY(-6px);
+  background: var(--glass-bg-strong);
+  box-shadow: 0 0 58px rgba(40, 140, 255, 0.46);
+}
+
+.careIcon {
+  display: grid;
+  place-items: center;
+  width: clamp(40px, 3.4vw, 52px);
+  height: clamp(40px, 3.4vw, 52px);
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--blue);
+}
+
+.careTitle {
+  margin: clamp(14px, 1.6vw, 22px) 0 0;
+  font-size: clamp(14px, 1.3vw, 18px);
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ffffff;
+}
+
+.careText {
+  margin: 10px 0 0;
+  font-size: clamp(12px, 0.95vw, 14px);
+  line-height: 1.6;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+/* ── SECTION 4 — Bravecto Plus (2 cột đảo bên) ──────────────────────────── */
+
+.howGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+
+.howText {
+  min-width: 0;
+}
+
+.alignEnd > .h2Upper {
+  text-align: right;
+}
+
+/* Desktop: video sang TRÁI, chữ sang PHẢI. Mobile giữ nguyên thứ tự DOM
+   (chữ trước, video sau) nên không cần đổi gì thêm. */
+@media (min-width: 900px) {
+  .howMedia {
+    order: -1;
+  }
+
+  .howMedia .videoFrame {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+/* ── SECTION 5 — một chương trình ───────────────────────────────────────── */
+
+.programGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(28px, 4.5vw, 72px);
+  align-items: center;
+}
+
+.programCard {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1 / 1;
+  justify-self: center;
+  padding: clamp(14px, 2vw, 28px);
+  border-radius: 28px;
+  background: #ffffff;
+  transform: rotate(-6deg);
+  box-shadow: 0 34px 70px -30px rgba(0, 0, 0, 0.85);
+}
+
+.programBadge {
+  width: min(100%, 340px);
+  height: auto;
+  /* Bù lại độ nghiêng của thẻ để huy hiệu vẫn đọc được theo chiều dọc. */
+  transform: rotate(6deg);
+}
+
+.lead {
+  margin: clamp(14px, 1.8vw, 22px) 0 0;
+  max-width: 62ch;
+  font-size: clamp(0.95rem, 1.1vw, 1.08rem);
+  line-height: 1.7;
+  color: var(--text-soft);
+  text-wrap: pretty;
+}
+
+.checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(10px, 1.4vw, 18px) clamp(14px, 2vw, 28px);
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.45;
+  color: #e9f4ff;
+}
+
+.checkIcon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  border-radius: 50%;
+  border: 1px solid rgba(41, 169, 225, 0.55);
+  background: rgba(41, 169, 225, 0.22);
+  color: #9adcf8;
+}
+
+.programCta {
+  margin-top: clamp(20px, 2.6vw, 30px);
+}
+
+/* ── SECTION 6 — FAQ ────────────────────────────────────────────────────── */
+
+.faqSection {
+  padding-bottom: clamp(64px, 8vw, 140px);
+}
+
+.faqGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: start;
+}
+
+.faqLabel {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.faqTitle {
+  margin: 12px 0 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+}
+
+.faqDesc {
+  margin: 12px 0 0;
+  max-width: 36ch;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.65;
+  color: var(--text-soft);
+}
+
+.contactPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: clamp(16px, 2vw, 24px);
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contactPill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.9);
+}
+
+.contactPill:focus-visible {
+  outline: 3px solid #8ad9f7;
+  outline-offset: 3px;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faqItem {
+  border-radius: 14px;
+  border: 1px solid rgba(140, 190, 240, 0.28);
+  background: rgba(13, 45, 84, 0.72);
+  overflow: hidden;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.faqItemOpen {
+  border-color: rgba(41, 169, 225, 0.55);
+  background: rgba(17, 54, 99, 0.85);
+}
+
+.faqHeading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.faqButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: clamp(14px, 1.4vw, 18px) clamp(14px, 1.8vw, 22px);
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: clamp(12px, 1.1vw, 15px);
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faqButton:focus-visible {
+  outline: 2px solid #8ad9f7;
+  outline-offset: -3px;
+  border-radius: 14px;
+}
+
+.faqSign {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(150, 200, 255, 0.45);
+  color: #dceaf8;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.faqItemOpen .faqSign {
+  transform: rotate(45deg);
+  background: rgba(41, 169, 225, 0.28);
+}
+
+/* Animation chiều cao thật của nội dung (không đoán max-height). */
+.faqPanel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.faqItemOpen .faqPanel {
+  grid-template-rows: 1fr;
+}
+
+.faqPanelInner {
+  overflow: hidden;
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 clamp(14px, 1.8vw, 22px) clamp(14px, 1.6vw, 20px);
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 1.65;
+  color: rgba(210, 230, 247, 0.84);
+  text-wrap: pretty;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Tablet: bỏ 2 cột ở các khối có nội dung dài, giữ 3 thẻ ở dạng 2 + 1. */
+@media (max-width: 1023px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 3vw, 32px);
+  }
+
+  .heroArt {
+    order: 2;
+    min-height: clamp(280px, 52vw, 420px);
+  }
+
+  .dogA {
+    height: clamp(250px, 42vw, 380px);
+  }
+
+  .twoCol,
+  .howGrid,
+  .programGrid,
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaCol .videoFrame {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .howMedia .videoFrame {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .careGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .alignEnd > .h2Upper {
+    text-align: left;
+  }
+
+  .programCard {
+    max-width: 380px;
+    margin-inline: auto;
+  }
+}
+
+/* Mobile ≤ 767px: một cột, thẻ 3 cột xếp dọc, vạch ngăn thành vạch ngang. */
+@media (max-width: 767px) {
+  /* Mobile: dải video chỉ cao ~300px nên logo MSD/Belwee nằm ở giữa khung.
+     Đặt pill ở ĐÁY - TRÁI và nút điều khiển ở ĐÁY - PHẢI (trên dải gradient
+     navy) để cả hai không đè lên logo và vẫn đạt ≥ 44px để chạm. */
+  .introControls {
+    bottom: calc(clamp(80px, 9vw, 120px) + 8px);
+    right: 14px;
+  }
+
+  .introPill {
+    left: 14px;
+    right: auto;
+    bottom: calc(clamp(80px, 9vw, 120px) + 10px);
+    transform: none;
+    animation: none;
+    font-size: 12.5px;
+    padding: 10px 14px;
+  }
+
+  .heroArt {
+    min-height: clamp(300px, 88vw, 400px);
+  }
+
+  .dogA {
+    height: clamp(250px, 74vw, 340px);
+  }
+
+  .seal365 {
+    width: clamp(74px, 20vw, 96px);
+    right: 0;
+    top: 0;
+  }
+
+  .medal {
+    width: clamp(88px, 24vw, 116px);
+    left: 0;
+    bottom: 0;
+  }
+
+  .brandCard {
+    width: 100%;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .brandClaim {
+    font-size: 10px;
+  }
+
+  .careGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Thẻ 3 cột → xếp dọc: icon về dòng riêng thay vì vắt mép (vắt mép chỉ
+     đúng khi 3 cột nằm ngang). Vạch ngăn dọc → vạch ngang. */
+  .glassRow {
+    grid-template-columns: 1fr;
+  }
+
+  .cell {
+    padding: 16px clamp(14px, 4vw, 20px) 18px;
+  }
+
+  .cell + .cell {
+    border-left: none;
+    border-top: 1px solid rgba(190, 222, 255, 0.42);
+  }
+
+  .cellIcon {
+    position: static;
+    transform: none;
+    margin: 0 auto 10px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .quote {
+    align-items: center;
+  }
+
+  .quoteImg {
+    max-width: 84px;
+  }
+
+  .programCard {
+    max-width: 340px;
+    transform: rotate(-3deg);
+  }
+
+  .programBadge {
+    transform: rotate(3deg);
+  }
+}
+
+/* Máy yếu / người dùng chọn giảm chuyển động: tắt mọi animation lặp. */
+@media (prefers-reduced-motion: reduce) {
+  .dogA,
+  .introPill {
+    animation: none;
+  }
+
+  .careCard,
+  .btnPrimary,
+  .btnGhost,
+  .contactPill,
+  .videoPlayDot,
+  .introBtn,
+  .introPlayBig {
+    transition: none;
+  }
+
+  .faqPanel {
+    transition: none;
+  }
+}

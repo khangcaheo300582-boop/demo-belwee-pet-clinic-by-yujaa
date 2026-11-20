@@ -1,0 +1,43 @@
+{
+  "name": "Belwee Pet Clinic",
+  "short_name": "Belwee",
+  "description": "Phòng khám & Chăm sóc thú cưng Belwee — hotline cấp cứu 24h, 4 chi nhánh tại TP. Hồ Chí Minh.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f4f8ff",
+  "theme_color": "#f4f8ff",
+  "lang": "vi",
+  "dir": "ltr",
+  "categories": ["medical", "business", "shopping"],
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Đặt lịch khám",
+      "short_name": "Đặt lịch",
+      "url": "/booking/kham-benh",
+      "icons": [{ "src": "/icon.png", "sizes": "512x512" }]
+    },
+    {
+      "name": "Liên hệ & hotline",
+      "short_name": "Liên hệ",
+      "url": "/lien-he",
+      "icons": [{ "src": "/icon.png", "sizes": "512x512" }]
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+export const CUSTOMER_IDLE_TIMEOUT_MS = 3 * 24 * 60 * 60 * 1000;
+export const STAFF_IDLE_TIMEOUT_MS = 15 * 60 * 1000;
+export const SESSION_ACTIVITY_REFRESH_MS = 60 * 1000;

@@ -1,0 +1,2126 @@
+{
+  "label": "group-b",
+  "ts": "2026-10-19T13:49:24.372Z",
+  "base": "http://localhost:3001",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "gpu": {
+    "devices": [
+      " / Intel(R) UHD Graphics",
+      " / Microsoft Basic Render Driver"
+    ],
+    "glRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A9) Direct3D11 vs_5_0 ps_5_0, D3D11-31.0.101.5382)",
+    "compositing": "enabled",
+    "videoDecode": "enabled"
+  },
+  "scenarios": {
+    "load": {
+      "durationMs": 15298,
+      "frames": 551,
+      "avgFps": 36,
+      "medianFrameMs": 16.7,
+      "p95FrameMs": 33.5,
+      "worstFrameMs": 1416.7,
+      "droppedFrames": 325,
+      "framesOver33ms": 42,
+      "framesOver50ms": 22,
+      "longtaskCount": 14,
+      "longtaskTotalMs": 2846,
+      "longestTaskMs": 480,
+      "topLongTasks": [
+        {
+          "startMs": 733,
+          "durMs": 480,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 4012,
+          "durMs": 336,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 2793,
+          "durMs": 293,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 3297,
+          "durMs": 285,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 9140,
+          "durMs": 254,
+          "attribution": "unknown"
+        }
+      ],
+      "loafCount": 24,
+      "loafTotalMs": 5828.7,
+      "loafMaxMs": 1234.1,
+      "topLoaf": [
+        {
+          "startMs": 1426,
+          "durMs": 1234.1,
+          "blockingMs": 0,
+          "styleLayoutMs": 0.1,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 3167,
+          "durMs": 582.7,
+          "blockingMs": 402.1,
+          "styleLayoutMs": 146.3,
+          "invoker": "MessagePort.onmessage",
+          "src": "http://localhost:3001/_next/static/chunks/7023-6ce5bdd2ea8dd9ad.js"
+        },
+        {
+          "startMs": 147,
+          "durMs": 572.5,
+          "blockingMs": 0,
+          "styleLayoutMs": 0.5,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 721,
+          "durMs": 483.3,
+          "blockingMs": 431.9,
+          "styleLayoutMs": 0.3,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 4003,
+          "durMs": 355.8,
+          "blockingMs": 293.4,
+          "styleLayoutMs": 1,
+          "invoker": "MessagePort.onmessage",
+          "src": "http://localhost:3001/_next/static/chunks/7023-6ce5bdd2ea8dd9ad.js"
+        }
+      ],
+      "counters": {
+        "LayoutCount": 70,
+        "RecalcStyleCount": 234,
+        "JSHeapMB": 7.1,
+        "TaskDurationMs": 6431.9,
+        "ScriptDurationMs": 1063.9,
+        "LayoutDurationMs": 1095.7,
+        "RecalcStyleDurationMs": 1084.7
+      },
+      "trace": {
+        "topByTotalMs": [
+          {
+            "name": "RunTask",
+            "totalMs": 35430.2,
+            "count": 43308,
+            "maxMs": 401.2
+          },
+          {
+            "name": "Scheduler::RunTask",
+            "totalMs": 6770.2,
+            "count": 6499,
+            "maxMs": 84.4
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass",
+            "totalMs": 4599.2,
+            "count": 4273,
+            "maxMs": 22.3
+          },
+          {
+            "name": "Graphics.Pipeline",
+            "totalMs": 3921.1,
+            "count": 7630,
+            "maxMs": 12.2
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "totalMs": 3855.7,
+            "count": 574,
+            "maxMs": 321.3
+          },
+          {
+            "name": "FunctionCall",
+            "totalMs": 2718.7,
+            "count": 2948,
+            "maxMs": 366.8
+          },
+          {
+            "name": "DisplayScheduler::OnBeginFrameDeadline",
+            "totalMs": 2292.9,
+            "count": 770,
+            "maxMs": 10.2
+          },
+          {
+            "name": "DisplayScheduler::DrawAndSwap",
+            "totalMs": 2286.2,
+            "count": 457,
+            "maxMs": 10.2
+          },
+          {
+            "name": "Display::DrawAndSwap",
+            "totalMs": 2283.5,
+            "count": 457,
+            "maxMs": 10.2
+          },
+          {
+            "name": "DirectRenderer::DrawFrame",
+            "totalMs": 2023.8,
+            "count": 457,
+            "maxMs": 9.2
+          },
+          {
+            "name": "DirectRenderer::DrawRenderPass",
+            "totalMs": 1941.3,
+            "count": 4636,
+            "maxMs": 4.1
+          },
+          {
+            "name": "FireAnimationFrame",
+            "totalMs": 1371.6,
+            "count": 2345,
+            "maxMs": 222.5
+          },
+          {
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "totalMs": 1313.6,
+            "count": 1248,
+            "maxMs": 84.4
+          },
+          {
+            "name": "GPUTask",
+            "totalMs": 1280.3,
+            "count": 1110,
+            "maxMs": 84.4
+          },
+          {
+            "name": "CommandBuffer::Flush",
+            "totalMs": 1231.5,
+            "count": 1059,
+            "maxMs": 84.4
+          },
+          {
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "totalMs": 1225.5,
+            "count": 1059,
+            "maxMs": 84.4
+          },
+          {
+            "name": "UpdateLayoutTree",
+            "totalMs": 1210.6,
+            "count": 236,
+            "maxMs": 201.1
+          },
+          {
+            "name": "CommandBufferService:PutChanged",
+            "totalMs": 1208.6,
+            "count": 1059,
+            "maxMs": 84.3
+          },
+          {
+            "name": "Layout",
+            "totalMs": 1087.2,
+            "count": 72,
+            "maxMs": 259
+          },
+          {
+            "name": "RasterizerTaskImpl::RunOnWorkerThread",
+            "totalMs": 1046,
+            "count": 384,
+            "maxMs": 84.6
+          },
+          {
+            "name": "RasterTask",
+            "totalMs": 1035.8,
+            "count": 384,
+            "maxMs": 84.6
+          },
+          {
+            "name": "RasterImplementation::RasterCHROMIUM",
+            "totalMs": 1027.7,
+            "count": 677,
+            "maxMs": 84.6
+          },
+          {
+            "name": "GpuRasterBuffer::Playback",
+            "totalMs": 1025.7,
+            "count": 384,
+            "maxMs": 84.6
+          },
+          {
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM",
+            "totalMs": 721.6,
+            "count": 677,
+            "maxMs": 82.1
+          },
+          {
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM::Flush",
+            "totalMs": 696.4,
+            "count": 677,
+            "maxMs": 82.1
+          }
+        ],
+        "keyEvents": {
+          "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass": {
+            "totalMs": 4599.2,
+            "count": 4273,
+            "maxMs": 22.3
+          },
+          "Graphics.Pipeline": {
+            "totalMs": 3921.1,
+            "count": 7630,
+            "maxMs": 12.2
+          },
+          "FunctionCall": {
+            "totalMs": 2718.7,
+            "count": 2948,
+            "maxMs": 366.8
+          },
+          "DirectRenderer::DrawFrame": {
+            "totalMs": 2023.8,
+            "count": 457,
+            "maxMs": 9.2
+          },
+          "GPUTask": {
+            "totalMs": 1280.3,
+            "count": 1110,
+            "maxMs": 84.4
+          },
+          "UpdateLayoutTree": {
+            "totalMs": 1210.6,
+            "count": 236,
+            "maxMs": 201.1
+          },
+          "Layout": {
+            "totalMs": 1087.2,
+            "count": 72,
+            "maxMs": 259
+          },
+          "RasterTask": {
+            "totalMs": 1035.8,
+            "count": 384,
+            "maxMs": 84.6
+          },
+          "Commit": {
+            "totalMs": 676.9,
+            "count": 675,
+            "maxMs": 6.2
+          },
+          "ProxyImpl::ReadyToCommit": {
+            "totalMs": 340.1,
+            "count": 321,
+            "maxMs": 2.8
+          },
+          "LayerTreeHostImpl::CommitComplete": {
+            "totalMs": 308,
+            "count": 423,
+            "maxMs": 2.3
+          },
+          "Layerize": {
+            "totalMs": 259.7,
+            "count": 573,
+            "maxMs": 14
+          },
+          "IntersectionObserverController::computeIntersections": {
+            "totalMs": 196.3,
+            "count": 1149,
+            "maxMs": 5.4
+          },
+          "Paint": {
+            "totalMs": 181,
+            "count": 186,
+            "maxMs": 24.3
+          },
+          "LayerTreeHost::WaitForCommitCompletion": {
+            "totalMs": 148.4,
+            "count": 675,
+            "maxMs": 33.7
+          },
+          "EventDispatch": {
+            "totalMs": 135.2,
+            "count": 277,
+            "maxMs": 16.2
+          },
+          "PrePaint": {
+            "totalMs": 120.7,
+            "count": 578,
+            "maxMs": 10.7
+          },
+          "ProxyImpl::Commit": {
+            "totalMs": 101.6,
+            "count": 321,
+            "maxMs": 1.1
+          },
+          "LayerTreeHostImpl::FinishCommit": {
+            "totalMs": 88.6,
+            "count": 423,
+            "maxMs": 2.4
+          },
+          "SkiaOutputSurfaceImpl::FlushGpuTasks": {
+            "totalMs": 78.7,
+            "count": 4738,
+            "maxMs": 15.1
+          },
+          "SingleThreadProxy::DoPostCommit": {
+            "totalMs": 68.5,
+            "count": 102,
+            "maxMs": 2.1
+          },
+          "Surface::CommitFrame": {
+            "totalMs": 61,
+            "count": 492,
+            "maxMs": 0.4
+          },
+          "SingleThreadProxy::DoCommit": {
+            "totalMs": 46,
+            "count": 102,
+            "maxMs": 2.6
+          },
+          "ProxyMain::BeginMainFrame::commit": {
+            "totalMs": 28.7,
+            "count": 321,
+            "maxMs": 2
+          },
+          "auto cc::LayerTreeHost::SetNeedsCommit(bool)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const": {
+            "totalMs": 24.4,
+            "count": 6219,
+            "maxMs": 2.1
+          },
+          "PaintImage": {
+            "totalMs": 23.5,
+            "count": 554,
+            "maxMs": 1.5
+          },
+          "DCLayerTree::CommitAndClearPendingOverlays": {
+            "totalMs": 20.7,
+            "count": 456,
+            "maxMs": 1.7
+          },
+          "LayerTreeHostImpl::BuildHitTestData": {
+            "totalMs": 19,
+            "count": 415,
+            "maxMs": 0.5
+          },
+          "ProxyImpl::SetNeedsCommitOnImplThread": {
+            "totalMs": 12.1,
+            "count": 576,
+            "maxMs": 1.2
+          },
+          "DirectRenderer::DrawFrame ProcessForOverlays": {
+            "totalMs": 12,
+            "count": 457,
+            "maxMs": 0.2
+          },
+          "TimerFire": {
+            "totalMs": 11.9,
+            "count": 50,
+            "maxMs": 1.5
+          },
+          "LayerTreeHostImpl::BeginCommit": {
+            "totalMs": 9.7,
+            "count": 423,
+            "maxMs": 0.2
+          },
+          "Scheduler::NotifyReadyToCommit": {
+            "totalMs": 5.8,
+            "count": 423,
+            "maxMs": 0.1
+          },
+          "WidgetBase::DidCommitAndDrawCompositorFrame": {
+            "totalMs": 1.4,
+            "count": 321,
+            "maxMs": 0.1
+          },
+          "CommitLoad": {
+            "totalMs": 0.1,
+            "count": 1,
+            "maxMs": 0.1
+          },
+          "DCLayerTree::CommitAndClearPendingOverlays::Commit": {
+            "totalMs": 0.1,
+            "count": 1,
+            "maxMs": 0.1
+          }
+        }
+      },
+      "introMs": 15298.299999998882
+    },
+    "scroll": {
+      "scrollHeight": 9198,
+      "durationMs": 18678,
+      "frames": 654,
+      "avgFps": 35,
+      "medianFrameMs": 16.8,
+      "p95FrameMs": 83.3,
+      "worstFrameMs": 250.1,
+      "droppedFrames": 467,
+      "framesOver33ms": 174,
+      "framesOver50ms": 73,
+      "longtaskCount": 9,
+      "longtaskTotalMs": 954,
+      "longestTaskMs": 166,
+      "topLongTasks": [
+        {
+          "startMs": 25593,
+          "durMs": 166,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 22206,
+          "durMs": 157,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 18995,
+          "durMs": 154,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 21843,
+          "durMs": 136,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 27892,
+          "durMs": 97,
+          "attribution": "unknown"
+        }
+      ],
+      "loafCount": 47,
+      "loafTotalMs": 4740.2,
+      "loafMaxMs": 251.5,
+      "topLoaf": [
+        {
+          "startMs": 14046,
+          "durMs": 251.5,
+          "blockingMs": 0,
+          "styleLayoutMs": 4.4,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 12818,
+          "durMs": 244.9,
+          "blockingMs": 0,
+          "styleLayoutMs": 22.6,
+          "invoker": "FrameRequestCallback",
+          "src": "http://localhost:3001/_next/static/chunks/c15bf2b0-ae7e387dcfe55622.js"
+        },
+        {
+          "startMs": 22795,
+          "durMs": 222.5,
+          "blockingMs": 0,
+          "styleLayoutMs": 8.5,
+          "invoker": "FrameRequestCallback",
+          "src": "http://localhost:3001/_next/static/chunks/app/layout-db775288aaedfd2e.js"
+        },
+        {
+          "startMs": 13508,
+          "durMs": 209.2,
+          "blockingMs": 0,
+          "styleLayoutMs": 7.2,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 13279,
+          "durMs": 204.4,
+          "blockingMs": 0,
+          "styleLayoutMs": 12.4,
+          "invoker": "FrameRequestCallback",
+          "src": "http://localhost:3001/_next/static/chunks/app/page-5232442e22ce48eb.js"
+        }
+      ],
+      "counters": {
+        "LayoutCount": 65,
+        "RecalcStyleCount": 692,
+        "JSHeapMB": 1,
+        "TaskDurationMs": 7032.1,
+        "ScriptDurationMs": 1027.1,
+        "LayoutDurationMs": 49.3,
+        "RecalcStyleDurationMs": 911
+      },
+      "trace": {
+        "topByTotalMs": [
+          {
+            "name": "RunTask",
+            "totalMs": 49761.8,
+            "count": 54641,
+            "maxMs": 206.2
+          },
+          {
+            "name": "Scheduler::RunTask",
+            "totalMs": 12901.1,
+            "count": 8512,
+            "maxMs": 206.2
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "totalMs": 6580,
+            "count": 679,
+            "maxMs": 71.2
+          },
+          {
+            "name": "Graphics.Pipeline",
+            "totalMs": 6244.2,
+            "count": 10760,
+            "maxMs": 203.3
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass",
+            "totalMs": 6077.6,
+            "count": 5203,
+            "maxMs": 48.4
+          },
+          {
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "totalMs": 5488.8,
+            "count": 1691,
+            "maxMs": 47
+          },
+          {
+            "name": "GPUTask",
+            "totalMs": 5431.1,
+            "count": 1405,
+            "maxMs": 47
+          },
+          {
+            "name": "CommandBuffer::Flush",
+            "totalMs": 5369.1,
+            "count": 1387,
+            "maxMs": 46.9
+          },
+          {
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "totalMs": 5362.1,
+            "count": 1387,
+            "maxMs": 46.9
+          },
+          {
+            "name": "CommandBufferService:PutChanged",
+            "totalMs": 5337.5,
+            "count": 1387,
+            "maxMs": 46.9
+          },
+          {
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM",
+            "totalMs": 3705.1,
+            "count": 1437,
+            "maxMs": 17.2
+          },
+          {
+            "name": "RasterDecoderImpl::DoEndRasterCHROMIUM::Flush",
+            "totalMs": 3649.3,
+            "count": 1437,
+            "maxMs": 17.2
+          },
+          {
+            "name": "RendererRasterWorker",
+            "totalMs": 3605.5,
+            "count": 944,
+            "maxMs": 47
+          },
+          {
+            "name": "DisplayScheduler::OnBeginFrameDeadline",
+            "totalMs": 3314.2,
+            "count": 1132,
+            "maxMs": 12.7
+          },
+          {
+            "name": "DisplayScheduler::DrawAndSwap",
+            "totalMs": 3305.8,
+            "count": 770,
+            "maxMs": 12.7
+          },
+          {
+            "name": "Display::DrawAndSwap",
+            "totalMs": 3301.4,
+            "count": 770,
+            "maxMs": 12.7
+          },
+          {
+            "name": "DirectRenderer::DrawFrame",
+            "totalMs": 2871,
+            "count": 656,
+            "maxMs": 11.7
+          },
+          {
+            "name": "DirectRenderer::DrawRenderPass",
+            "totalMs": 2747.1,
+            "count": 5988,
+            "maxMs": 6.6
+          },
+          {
+            "name": "Commit",
+            "totalMs": 1838.4,
+            "count": 743,
+            "maxMs": 60.1
+          },
+          {
+            "name": "RendererMainThread",
+            "totalMs": 1774.5,
+            "count": 452,
+            "maxMs": 13.1
+          },
+          {
+            "name": "FunctionCall",
+            "totalMs": 1687.5,
+            "count": 6646,
+            "maxMs": 18.1
+          },
+          {
+            "name": "Layerize",
+            "totalMs": 1491.8,
+            "count": 679,
+            "maxMs": 13.5
+          },
+          {
+            "name": "FireAnimationFrame",
+            "totalMs": 1491.6,
+            "count": 3311,
+            "maxMs": 18.3
+          },
+          {
+            "name": "RasterDecoderImpl::DoRasterCHROMIUM",
+            "totalMs": 1217.7,
+            "count": 1437,
+            "maxMs": 8.3
+          },
+          {
+            "name": "RasterDecoderImpl::DoRasterCHROMIUM::Deserializing",
+            "totalMs": 1198.7,
+            "count": 1437,
+            "maxMs": 8.2
+          }
+        ],
+        "keyEvents": {
+          "Graphics.Pipeline": {
+            "totalMs": 6244.2,
+            "count": 10760,
+            "maxMs": 203.3
+          },
+          "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass": {
+            "totalMs": 6077.6,
+            "count": 5203,
+            "maxMs": 48.4
+          },
+          "GPUTask": {
+            "totalMs": 5431.1,
+            "count": 1405,
+            "maxMs": 47
+          },
+          "DirectRenderer::DrawFrame": {
+            "totalMs": 2871,
+            "count": 656,
+            "maxMs": 11.7
+          },
+          "Commit": {
+            "totalMs": 1838.4,
+            "count": 743,
+            "maxMs": 60.1
+          },
+          "FunctionCall": {
+            "totalMs": 1687.5,
+            "count": 6646,
+            "maxMs": 18.1
+          },
+          "Layerize": {
+            "totalMs": 1491.8,
+            "count": 679,
+            "maxMs": 13.5
+          },
+          "ProxyMain::BeginMainFrame::commit": {
+            "totalMs": 894.7,
+            "count": 469,
+            "maxMs": 57.9
+          },
+          "RasterTask": {
+            "totalMs": 886.7,
+            "count": 1164,
+            "maxMs": 45
+          },
+          "UpdateLayoutTree": {
+            "totalMs": 875.9,
+            "count": 692,
+            "maxMs": 17.9
+          },
+          "LayerTreeHost::WaitForCommitCompletion": {
+            "totalMs": 850.7,
+            "count": 743,
+            "maxMs": 57.8
+          },
+          "ProxyImpl::ReadyToCommit": {
+            "totalMs": 538.4,
+            "count": 469,
+            "maxMs": 4.3
+          },
+          "LayerTreeHostImpl::CommitComplete": {
+            "totalMs": 473.4,
+            "count": 533,
+            "maxMs": 3.5
+          },
+          "EventDispatch": {
+            "totalMs": 308.1,
+            "count": 814,
+            "maxMs": 11.6
+          },
+          "IntersectionObserverController::computeIntersections": {
+            "totalMs": 247.4,
+            "count": 1360,
+            "maxMs": 7.7
+          },
+          "ProxyImpl::Commit": {
+            "totalMs": 186.2,
+            "count": 469,
+            "maxMs": 1.8
+          },
+          "PrePaint": {
+            "totalMs": 162.8,
+            "count": 978,
+            "maxMs": 4.7
+          },
+          "HitTest": {
+            "totalMs": 149.8,
+            "count": 307,
+            "maxMs": 10.8
+          },
+          "LayerTreeHostImpl::FinishCommit": {
+            "totalMs": 130.6,
+            "count": 533,
+            "maxMs": 7
+          },
+          "Surface::CommitFrame": {
+            "totalMs": 112.8,
+            "count": 855,
+            "maxMs": 0.6
+          },
+          "Paint": {
+            "totalMs": 106.2,
+            "count": 234,
+            "maxMs": 4.5
+          },
+          "LayerTreeHostImpl::BuildHitTestData": {
+            "totalMs": 86.3,
+            "count": 640,
+            "maxMs": 1
+          },
+          "SkiaOutputSurfaceImpl::FlushGpuTasks": {
+            "totalMs": 79.9,
+            "count": 5745,
+            "maxMs": 1.6
+          },
+          "Layout": {
+            "totalMs": 64.9,
+            "count": 72,
+            "maxMs": 2.9
+          },
+          "SingleThreadProxy::DoPostCommit": {
+            "totalMs": 28.6,
+            "count": 64,
+            "maxMs": 3.1
+          },
+          "TimerFire": {
+            "totalMs": 27.7,
+            "count": 82,
+            "maxMs": 5.6
+          },
+          "DCLayerTree::CommitAndClearPendingOverlays": {
+            "totalMs": 26.5,
+            "count": 605,
+            "maxMs": 0.2
+          },
+          "DirectRenderer::DrawFrame ProcessForOverlays": {
+            "totalMs": 19.1,
+            "count": 656,
+            "maxMs": 1.8
+          },
+          "auto cc::LayerTreeHost::SetNeedsCommit(bool)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const": {
+            "totalMs": 17.1,
+            "count": 2261,
+            "maxMs": 1.3
+          },
+          "SingleThreadProxy::DoCommit": {
+            "totalMs": 16.4,
+            "count": 64,
+            "maxMs": 7.7
+          },
+          "ProxyImpl::SetNeedsCommitOnImplThread": {
+            "totalMs": 15.4,
+            "count": 919,
+            "maxMs": 0.8
+          },
+          "LayerTreeHostImpl::BeginCommit": {
+            "totalMs": 12.7,
+            "count": 533,
+            "maxMs": 0.6
+          },
+          "Scheduler::NotifyReadyToCommit": {
+            "totalMs": 9,
+            "count": 533,
+            "maxMs": 0.8
+          },
+          "PaintImage": {
+            "totalMs": 7.8,
+            "count": 220,
+            "maxMs": 0.8
+          },
+          "WidgetBase::DidCommitAndDrawCompositorFrame": {
+            "totalMs": 1.9,
+            "count": 469,
+            "maxMs": 0.1
+          }
+        }
+      }
+    },
+    "hover-navbar": {
+      "targets": 11,
+      "durationMs": 10268,
+      "frames": 612,
+      "avgFps": 59.6,
+      "medianFrameMs": 16.7,
+      "p95FrameMs": 17.3,
+      "worstFrameMs": 33.4,
+      "droppedFrames": 4,
+      "framesOver33ms": 3,
+      "framesOver50ms": 0,
+      "longtaskCount": 0,
+      "longtaskTotalMs": 0,
+      "longestTaskMs": 0,
+      "topLongTasks": [],
+      "loafCount": 0,
+      "loafTotalMs": 0,
+      "loafMaxMs": 0,
+      "topLoaf": [],
+      "counters": {
+        "LayoutCount": 66,
+        "RecalcStyleCount": 138,
+        "JSHeapMB": 0.7,
+        "TaskDurationMs": 2449.8,
+        "ScriptDurationMs": 552.9,
+        "LayoutDurationMs": 34.8,
+        "RecalcStyleDurationMs": 73.2
+      },
+      "trace": {
+        "topByTotalMs": [
+          {
+            "name": "RunTask",
+            "totalMs": 29701.1,
+            "count": 43865,
+            "maxMs": 62.8
+          },
+          {
+            "name": "Scheduler::RunTask",
+            "totalMs": 7251.8,
+            "count": 7077,
+            "maxMs": 17.2
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass",
+            "totalMs": 5177.4,
+            "count": 4962,
+            "maxMs": 10
+          },
+          {
+            "name": "Graphics.Pipeline",
+            "totalMs": 4720.7,
+            "count": 8248,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DisplayScheduler::OnBeginFrameDeadline",
+            "totalMs": 2792.6,
+            "count": 809,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DisplayScheduler::DrawAndSwap",
+            "totalMs": 2785.4,
+            "count": 521,
+            "maxMs": 11.3
+          },
+          {
+            "name": "Display::DrawAndSwap",
+            "totalMs": 2782.3,
+            "count": 521,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DirectRenderer::DrawFrame",
+            "totalMs": 2429.7,
+            "count": 511,
+            "maxMs": 10.1
+          },
+          {
+            "name": "DirectRenderer::DrawRenderPass",
+            "totalMs": 2327.6,
+            "count": 5474,
+            "maxMs": 7.2
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "totalMs": 2324.2,
+            "count": 618,
+            "maxMs": 38.9
+          },
+          {
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "totalMs": 892.9,
+            "count": 798,
+            "maxMs": 17.2
+          },
+          {
+            "name": "GPUTask",
+            "totalMs": 870,
+            "count": 716,
+            "maxMs": 17.2
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::SwapBuffers",
+            "totalMs": 866.8,
+            "count": 415,
+            "maxMs": 6.2
+          },
+          {
+            "name": "CommandBuffer::Flush",
+            "totalMs": 836.4,
+            "count": 710,
+            "maxMs": 17.1
+          },
+          {
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "totalMs": 832.2,
+            "count": 710,
+            "maxMs": 17.1
+          },
+          {
+            "name": "CommandBufferService:PutChanged",
+            "totalMs": 820,
+            "count": 710,
+            "maxMs": 17.1
+          },
+          {
+            "name": "Commit",
+            "totalMs": 792.5,
+            "count": 726,
+            "maxMs": 17.8
+          },
+          {
+            "name": "FunctionCall",
+            "totalMs": 704.9,
+            "count": 4246,
+            "maxMs": 11.2
+          },
+          {
+            "name": "D3DVideoDecoder::DoDecode",
+            "totalMs": 699.4,
+            "count": 1905,
+            "maxMs": 5.4
+          },
+          {
+            "name": "D3DVideoDecoder::ReceivePictureBufferFromClient",
+            "totalMs": 668.9,
+            "count": 635,
+            "maxMs": 5.4
+          },
+          {
+            "name": "RendererMainThread",
+            "totalMs": 477,
+            "count": 599,
+            "maxMs": 3.2
+          },
+          {
+            "name": "ExternalBeginFrameSource::OnBeginFrame",
+            "totalMs": 469.3,
+            "count": 1420,
+            "maxMs": 10.4
+          },
+          {
+            "name": "FireAnimationFrame",
+            "totalMs": 445.1,
+            "count": 1896,
+            "maxMs": 5.3
+          },
+          {
+            "name": "ProxyImpl::ScheduledActionDraw",
+            "totalMs": 437.4,
+            "count": 347,
+            "maxMs": 8.4
+          },
+          {
+            "name": "MainFrame.Draw",
+            "totalMs": 435.2,
+            "count": 347,
+            "maxMs": 8.4
+          }
+        ],
+        "keyEvents": {
+          "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass": {
+            "totalMs": 5177.4,
+            "count": 4962,
+            "maxMs": 10
+          },
+          "Graphics.Pipeline": {
+            "totalMs": 4720.7,
+            "count": 8248,
+            "maxMs": 11.3
+          },
+          "DirectRenderer::DrawFrame": {
+            "totalMs": 2429.7,
+            "count": 511,
+            "maxMs": 10.1
+          },
+          "GPUTask": {
+            "totalMs": 870,
+            "count": 716,
+            "maxMs": 17.2
+          },
+          "Commit": {
+            "totalMs": 792.5,
+            "count": 726,
+            "maxMs": 17.8
+          },
+          "FunctionCall": {
+            "totalMs": 704.9,
+            "count": 4246,
+            "maxMs": 11.2
+          },
+          "ProxyImpl::ReadyToCommit": {
+            "totalMs": 420.1,
+            "count": 347,
+            "maxMs": 6.1
+          },
+          "LayerTreeHostImpl::CommitComplete": {
+            "totalMs": 338,
+            "count": 455,
+            "maxMs": 5.6
+          },
+          "EventDispatch": {
+            "totalMs": 271.8,
+            "count": 831,
+            "maxMs": 6.7
+          },
+          "IntersectionObserverController::computeIntersections": {
+            "totalMs": 204.2,
+            "count": 1236,
+            "maxMs": 3.2
+          },
+          "ProxyImpl::Commit": {
+            "totalMs": 112.2,
+            "count": 347,
+            "maxMs": 1.1
+          },
+          "ProxyMain::BeginMainFrame::commit": {
+            "totalMs": 105.5,
+            "count": 347,
+            "maxMs": 2.6
+          },
+          "Layerize": {
+            "totalMs": 102.7,
+            "count": 618,
+            "maxMs": 9.5
+          },
+          "LayerTreeHost::WaitForCommitCompletion": {
+            "totalMs": 95.8,
+            "count": 726,
+            "maxMs": 2.4
+          },
+          "Surface::CommitFrame": {
+            "totalMs": 92.2,
+            "count": 753,
+            "maxMs": 0.5
+          },
+          "PrePaint": {
+            "totalMs": 87.3,
+            "count": 874,
+            "maxMs": 3.8
+          },
+          "LayerTreeHostImpl::FinishCommit": {
+            "totalMs": 77.8,
+            "count": 455,
+            "maxMs": 1.9
+          },
+          "SkiaOutputSurfaceImpl::FlushGpuTasks": {
+            "totalMs": 70.8,
+            "count": 5620,
+            "maxMs": 0.5
+          },
+          "Layout": {
+            "totalMs": 66.3,
+            "count": 66,
+            "maxMs": 12.2
+          },
+          "UpdateLayoutTree": {
+            "totalMs": 61.6,
+            "count": 138,
+            "maxMs": 3.1
+          },
+          "SingleThreadProxy::DoPostCommit": {
+            "totalMs": 53.8,
+            "count": 108,
+            "maxMs": 2.1
+          },
+          "HitTest": {
+            "totalMs": 48.6,
+            "count": 256,
+            "maxMs": 2.6
+          },
+          "RasterTask": {
+            "totalMs": 44,
+            "count": 108,
+            "maxMs": 3.9
+          },
+          "LayerTreeHostImpl::BuildHitTestData": {
+            "totalMs": 42.8,
+            "count": 443,
+            "maxMs": 0.6
+          },
+          "Paint": {
+            "totalMs": 40.1,
+            "count": 172,
+            "maxMs": 1
+          },
+          "SingleThreadProxy::DoCommit": {
+            "totalMs": 30.1,
+            "count": 108,
+            "maxMs": 2.1
+          },
+          "DCLayerTree::CommitAndClearPendingOverlays": {
+            "totalMs": 26.3,
+            "count": 415,
+            "maxMs": 0.5
+          },
+          "DirectRenderer::DrawFrame ProcessForOverlays": {
+            "totalMs": 14.5,
+            "count": 511,
+            "maxMs": 0.3
+          },
+          "ProxyImpl::SetNeedsCommitOnImplThread": {
+            "totalMs": 12.9,
+            "count": 618,
+            "maxMs": 0.3
+          },
+          "auto cc::LayerTreeHost::SetNeedsCommit(bool)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const": {
+            "totalMs": 12.1,
+            "count": 786,
+            "maxMs": 0.9
+          },
+          "TimerFire": {
+            "totalMs": 11.3,
+            "count": 46,
+            "maxMs": 1.2
+          },
+          "LayerTreeHostImpl::BeginCommit": {
+            "totalMs": 11.1,
+            "count": 455,
+            "maxMs": 0.6
+          },
+          "Scheduler::NotifyReadyToCommit": {
+            "totalMs": 7.7,
+            "count": 455,
+            "maxMs": 1.2
+          },
+          "PaintImage": {
+            "totalMs": 2.7,
+            "count": 41,
+            "maxMs": 0.2
+          },
+          "WidgetBase::DidCommitAndDrawCompositorFrame": {
+            "totalMs": 1.5,
+            "count": 347,
+            "maxMs": 0.1
+          }
+        }
+      }
+    },
+    "overlays": {
+      "durationMs": 7402,
+      "frames": 418,
+      "avgFps": 56.5,
+      "medianFrameMs": 16.7,
+      "p95FrameMs": 17.3,
+      "worstFrameMs": 149.9,
+      "droppedFrames": 26,
+      "framesOver33ms": 7,
+      "framesOver50ms": 3,
+      "longtaskCount": 2,
+      "longtaskTotalMs": 235,
+      "longestTaskMs": 141,
+      "topLongTasks": [
+        {
+          "startMs": 12866,
+          "durMs": 141,
+          "attribution": "unknown"
+        },
+        {
+          "startMs": 16118,
+          "durMs": 94,
+          "attribution": "unknown"
+        }
+      ],
+      "loafCount": 4,
+      "loafTotalMs": 432,
+      "loafMaxMs": 147.7,
+      "topLoaf": [
+        {
+          "startMs": 12861,
+          "durMs": 147.7,
+          "blockingMs": 92.7,
+          "styleLayoutMs": 1,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 16674,
+          "durMs": 131.5,
+          "blockingMs": 0,
+          "styleLayoutMs": 0.5,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 16117,
+          "durMs": 100.7,
+          "blockingMs": 48.3,
+          "styleLayoutMs": 3.1,
+          "invoker": "",
+          "src": ""
+        },
+        {
+          "startMs": 19344,
+          "durMs": 52.1,
+          "blockingMs": 0,
+          "styleLayoutMs": 0.8,
+          "invoker": "",
+          "src": ""
+        }
+      ],
+      "counters": {
+        "LayoutCount": 5,
+        "RecalcStyleCount": 18,
+        "JSHeapMB": 1.4,
+        "TaskDurationMs": 1603.9,
+        "ScriptDurationMs": 240.9,
+        "LayoutDurationMs": 10.7,
+        "RecalcStyleDurationMs": 220.3
+      },
+      "trace": {
+        "topByTotalMs": [
+          {
+            "name": "RunTask",
+            "totalMs": 19975,
+            "count": 27000,
+            "maxMs": 173.2
+          },
+          {
+            "name": "Scheduler::RunTask",
+            "totalMs": 5149.1,
+            "count": 4816,
+            "maxMs": 25.7
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass",
+            "totalMs": 3784.5,
+            "count": 3329,
+            "maxMs": 11.1
+          },
+          {
+            "name": "Graphics.Pipeline",
+            "totalMs": 3202.4,
+            "count": 4856,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DisplayScheduler::OnBeginFrameDeadline",
+            "totalMs": 1987.1,
+            "count": 447,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DisplayScheduler::DrawAndSwap",
+            "totalMs": 1982.7,
+            "count": 290,
+            "maxMs": 11.3
+          },
+          {
+            "name": "Display::DrawAndSwap",
+            "totalMs": 1980.9,
+            "count": 290,
+            "maxMs": 11.3
+          },
+          {
+            "name": "DirectRenderer::DrawFrame",
+            "totalMs": 1755.7,
+            "count": 290,
+            "maxMs": 10.4
+          },
+          {
+            "name": "DirectRenderer::DrawRenderPass",
+            "totalMs": 1692.2,
+            "count": 3622,
+            "maxMs": 4.9
+          },
+          {
+            "name": "ProxyMain::BeginMainFrame",
+            "totalMs": 1458.4,
+            "count": 421,
+            "maxMs": 92.3
+          },
+          {
+            "name": "SkiaOutputSurfaceImplOnGpu::SwapBuffers",
+            "totalMs": 631.8,
+            "count": 290,
+            "maxMs": 3.9
+          },
+          {
+            "name": "Commit",
+            "totalMs": 538.3,
+            "count": 421,
+            "maxMs": 11.2
+          },
+          {
+            "name": "D3DVideoDecoder::DoDecode",
+            "totalMs": 514.6,
+            "count": 1336,
+            "maxMs": 3.5
+          },
+          {
+            "name": "GpuChannel::ExecuteDeferredRequest",
+            "totalMs": 511,
+            "count": 597,
+            "maxMs": 25.7
+          },
+          {
+            "name": "GPUTask",
+            "totalMs": 494.2,
+            "count": 529,
+            "maxMs": 25.7
+          },
+          {
+            "name": "D3DVideoDecoder::ReceivePictureBufferFromClient",
+            "totalMs": 493.1,
+            "count": 445,
+            "maxMs": 3.5
+          },
+          {
+            "name": "CommandBuffer::Flush",
+            "totalMs": 471.7,
+            "count": 511,
+            "maxMs": 25.6
+          },
+          {
+            "name": "CommandBufferStub::OnAsyncFlush",
+            "totalMs": 468.8,
+            "count": 511,
+            "maxMs": 25.6
+          },
+          {
+            "name": "CommandBufferService:PutChanged",
+            "totalMs": 461.1,
+            "count": 511,
+            "maxMs": 25.6
+          },
+          {
+            "name": "FireAnimationFrame",
+            "totalMs": 401.3,
+            "count": 1339,
+            "maxMs": 5.2
+          },
+          {
+            "name": "FunctionCall",
+            "totalMs": 374,
+            "count": 1693,
+            "maxMs": 20
+          },
+          {
+            "name": "ExternalBeginFrameSource::OnBeginFrame",
+            "totalMs": 371.7,
+            "count": 891,
+            "maxMs": 10.5
+          },
+          {
+            "name": "RendererMainThread",
+            "totalMs": 338.4,
+            "count": 484,
+            "maxMs": 3.2
+          },
+          {
+            "name": "ProxyImpl::ScheduledActionDraw",
+            "totalMs": 274.6,
+            "count": 218,
+            "maxMs": 6
+          },
+          {
+            "name": "MainFrame.Draw",
+            "totalMs": 273.1,
+            "count": 218,
+            "maxMs": 6
+          }
+        ],
+        "keyEvents": {
+          "SkiaOutputSurfaceImplOnGpu::FinishPaintRenderPass": {
+            "totalMs": 3784.5,
+            "count": 3329,
+            "maxMs": 11.1
+          },
+          "Graphics.Pipeline": {
+            "totalMs": 3202.4,
+            "count": 4856,
+            "maxMs": 11.3
+          },
+          "DirectRenderer::DrawFrame": {
+            "totalMs": 1755.7,
+            "count": 290,
+            "maxMs": 10.4
+          },
+          "Commit": {
+            "totalMs": 538.3,
+            "count": 421,
+            "maxMs": 11.2
+          },
+          "GPUTask": {
+            "totalMs": 494.2,
+            "count": 529,
+            "maxMs": 25.7
+          },
+          "FunctionCall": {
+            "totalMs": 374,
+            "count": 1693,
+            "maxMs": 20
+          },
+          "ProxyImpl::ReadyToCommit": {
+            "totalMs": 269.1,
+            "count": 218,
+            "maxMs": 3.8
+          },
+          "UpdateLayoutTree": {
+            "totalMs": 261.3,
+            "count": 19,
+            "maxMs": 140.6
+          },
+          "LayerTreeHostImpl::CommitComplete": {
+            "totalMs": 182.7,
+            "count": 218,
+            "maxMs": 2.8
+          },
+          "IntersectionObserverController::computeIntersections": {
+            "totalMs": 174,
+            "count": 842,
+            "maxMs": 9.7
+          },
+          "EventDispatch": {
+            "totalMs": 84.1,
+            "count": 139,
+            "maxMs": 20.9
+          },
+          "RasterTask": {
+            "totalMs": 80.3,
+            "count": 21,
+            "maxMs": 33.4
+          },
+          "LayerTreeHost::WaitForCommitCompletion": {
+            "totalMs": 76.5,
+            "count": 421,
+            "maxMs": 58.4
+          },
+          "ProxyImpl::Commit": {
+            "totalMs": 73.6,
+            "count": 218,
+            "maxMs": 2.1
+          },
+          "PrePaint": {
+            "totalMs": 65,
+            "count": 470,
+            "maxMs": 5.9
+          },
+          "Surface::CommitFrame": {
+            "totalMs": 55.3,
+            "count": 436,
+            "maxMs": 1.9
+          },
+          "SkiaOutputSurfaceImpl::FlushGpuTasks": {
+            "totalMs": 46.8,
+            "count": 3765,
+            "maxMs": 0.3
+          },
+          "LayerTreeHostImpl::FinishCommit": {
+            "totalMs": 41.7,
+            "count": 218,
+            "maxMs": 1.9
+          },
+          "LayerTreeHostImpl::BuildHitTestData": {
+            "totalMs": 26.1,
+            "count": 218,
+            "maxMs": 0.4
+          },
+          "DCLayerTree::CommitAndClearPendingOverlays": {
+            "totalMs": 21.5,
+            "count": 290,
+            "maxMs": 0.8
+          },
+          "ProxyMain::BeginMainFrame::commit": {
+            "totalMs": 19.1,
+            "count": 218,
+            "maxMs": 2.3
+          },
+          "HitTest": {
+            "totalMs": 18.3,
+            "count": 41,
+            "maxMs": 5
+          },
+          "Layerize": {
+            "totalMs": 17.1,
+            "count": 421,
+            "maxMs": 2.3
+          },
+          "TimerFire": {
+            "totalMs": 9.4,
+            "count": 36,
+            "maxMs": 1.2
+          },
+          "ProxyImpl::SetNeedsCommitOnImplThread": {
+            "totalMs": 9.1,
+            "count": 421,
+            "maxMs": 0.3
+          },
+          "DirectRenderer::DrawFrame ProcessForOverlays": {
+            "totalMs": 9,
+            "count": 291,
+            "maxMs": 0.1
+          },
+          "Layout": {
+            "totalMs": 9,
+            "count": 5,
+            "maxMs": 6.5
+          },
+          "Paint": {
+            "totalMs": 8.4,
+            "count": 26,
+            "maxMs": 1.4
+          },
+          "LayerTreeHostImpl::BeginCommit": {
+            "totalMs": 6.5,
+            "count": 218,
+            "maxMs": 0.1
+          },
+          "Scheduler::NotifyReadyToCommit": {
+            "totalMs": 3.3,
+            "count": 218,
+            "maxMs": 0.1
+          },
+          "WidgetBase::DidCommitAndDrawCompositorFrame": {
+            "totalMs": 0.9,
+            "count": 218,
+            "maxMs": 0
+          },
+          "PaintImage": {
+            "totalMs": 0.5,
+            "count": 23,
+            "maxMs": 0.1
+          },
+          "auto cc::LayerTreeHost::SetNeedsCommit(bool)::(lambda)::operator()()::(lambda)::operator()(uint32_t) const": {
+            "totalMs": 0.2,
+            "count": 70,
+            "maxMs": 0
+          },
+          "ProxyMain::SetPaintWorkletLayerPainter": {
+            "totalMs": 0.1,
+            "count": 1,
+            "maxMs": 0.1
+          },
+          "ProxyImpl::InitializePaintWorkletLayerPainterOnImpl": {
+            "totalMs": 0,
+            "count": 1,
+            "maxMs": 0
+          },
+          "PaintWorkletPaintDispatcher::RegisterPaintWorkletPainter": {
+            "totalMs": 0,
+            "count": 1,
+            "maxMs": 0
+          }
+        }
+      }
+    }
+  },
+  "inventory": {
+    "elementCount": 1090,
+    "backdrops": [
+      {
+        "sel": "div#site-global-hamburger-card.site-global-hamburger-card.lg-material",
+        "area": 396638,
+        "w": 1129,
+        "h": 351,
+        "top": 82,
+        "value": "blur(12px) saturate(1.9)"
+      },
+      {
+        "sel": "article.clinic-branch-card.cursor-pointer.p-7",
+        "area": 194750,
+        "w": 500,
+        "h": 390,
+        "top": 5889,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "article.clinic-branch-card.cursor-pointer.p-7",
+        "area": 194750,
+        "w": 500,
+        "h": 390,
+        "top": 5889,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "article.clinic-branch-card.cursor-pointer.p-7",
+        "area": 164750,
+        "w": 500,
+        "h": 330,
+        "top": 5535,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "article.clinic-branch-card.cursor-pointer.p-7",
+        "area": 164750,
+        "w": 500,
+        "h": 330,
+        "top": 5535,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "div.footer-contact-card",
+        "area": 137852,
+        "w": 355,
+        "h": 388,
+        "top": 9253,
+        "value": "blur(20px) saturate(1.5)"
+      },
+      {
+        "sel": "div.pt-glass.glass-surface.h-full",
+        "area": 95200,
+        "w": 280,
+        "h": 340,
+        "top": 1156,
+        "value": "blur(22px) saturate(1.7)"
+      }
+    ],
+    "filters": [
+      {
+        "sel": "span.apple-mesh-blob.is-a1.offscreen-pausable",
+        "area": 627264,
+        "w": 792,
+        "h": 792,
+        "top": -90,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a3.offscreen-pausable",
+        "area": 622080,
+        "w": 864,
+        "h": 720,
+        "top": 432,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a2.offscreen-pausable",
+        "area": 477740,
+        "w": 691,
+        "h": 691,
+        "top": 36,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "h1.glass-heading.relative",
+        "area": 190080,
+        "w": 1440,
+        "h": 132,
+        "top": 274,
+        "value": "drop-shadow(rgba(20, 50, 120, 0.28) 0px 6px 18px)"
+      },
+      {
+        "sel": "h2.mt-4.text-3xl.sm:text-4xl",
+        "area": 55040,
+        "w": 1376,
+        "h": 40,
+        "top": 1074,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px)"
+      },
+      {
+        "sel": "p.hero-sub.text-lg.sm:text-2xl",
+        "area": 49152,
+        "w": 768,
+        "h": 64,
+        "top": 430,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.8) 0px 2px 12px)"
+      },
+      {
+        "sel": "span.absolute.rounded-full.blur-2xl",
+        "area": 33035,
+        "w": 198,
+        "h": 167,
+        "top": 2692,
+        "value": "blur(40px)"
+      },
+      {
+        "sel": "span.booking-lens-button__sweep",
+        "area": 8440,
+        "w": 115,
+        "h": 74,
+        "top": 521,
+        "value": "blur(7px)"
+      },
+      {
+        "sel": "img.footer-brand-img",
+        "area": 7680,
+        "w": 160,
+        "h": 48,
+        "top": 9253,
+        "value": "brightness(0) invert(1)"
+      },
+      {
+        "sel": "button.floating-contact-main",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 806,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.35) 0px 8px 24px)"
+      },
+      {
+        "sel": "svg.footer-heading-icon",
+        "area": 361,
+        "w": 19,
+        "h": 19,
+        "top": 9254,
+        "value": "drop-shadow(rgba(18, 181, 255, 0.5) 0px 0px 8px)"
+      },
+      {
+        "sel": "svg.footer-heading-icon",
+        "area": 361,
+        "w": 19,
+        "h": 19,
+        "top": 9254,
+        "value": "drop-shadow(rgba(18, 181, 255, 0.5) 0px 0px 8px)"
+      }
+    ],
+    "animations": [
+      {
+        "sel": "div.template-enter.min-h-screen",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "value": "template-visible-failsafe 0s 1"
+      },
+      {
+        "sel": "span.glass-heading__sheen",
+        "area": 190080,
+        "w": 1440,
+        "h": 132,
+        "top": 274,
+        "value": "glassHeadingSheen 0s 1"
+      },
+      {
+        "sel": "span.stats-aura.animate-blob",
+        "area": 67600,
+        "w": 260,
+        "h": 260,
+        "top": 6416,
+        "value": "blob 0s 1"
+      },
+      {
+        "sel": "span.stats-aura.animate-blob",
+        "area": 67600,
+        "w": 260,
+        "h": 260,
+        "top": 6515,
+        "value": "blob 0s 1"
+      },
+      {
+        "sel": "span.area-map-pulse.absolute.rounded-full",
+        "area": 33035,
+        "w": 198,
+        "h": 167,
+        "top": 2692,
+        "value": "area-map-pulse 0s 1"
+      },
+      {
+        "sel": "span.booking-lens-button__sweep",
+        "area": 8440,
+        "w": 115,
+        "h": 74,
+        "top": 521,
+        "value": "ctSweepPass 0s 1"
+      },
+      {
+        "sel": "span.footer-emergency-ring",
+        "area": 7913,
+        "w": 188,
+        "h": 42,
+        "top": 9476,
+        "value": "footerEmergencyPulse 0s 1"
+      },
+      {
+        "sel": "span.journey-dots.absolute.inset-0",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 1949,
+        "value": "journey-dots-in 0s 1"
+      },
+      {
+        "sel": "svg.journey-check.absolute.inset-0",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 1949,
+        "value": "journey-check-in 0s 1"
+      },
+      {
+        "sel": "span.journey-dots.absolute.inset-0",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 1949,
+        "value": "journey-dots-in 0s 1"
+      },
+      {
+        "sel": "svg.journey-check.absolute.inset-0",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 1949,
+        "value": "journey-check-in 0s 1"
+      },
+      {
+        "sel": "span.journey-dots.absolute.inset-0",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 1949,
+        "value": "journey-dots-in 0s 1"
+      }
+    ],
+    "videos": [
+      {
+        "sel": "video.absolute.inset-0.h-full",
+        "area": 1296000,
+        "w": 1280,
+        "h": 720,
+        "top": 0,
+        "src": "http://localhost:3001/belwee-hero.mp4",
+        "paused": false,
+        "readyState": 4,
+        "playing": true
+      },
+      {
+        "sel": "video.absolute.inset-0.h-full",
+        "area": 1296000,
+        "w": 1280,
+        "h": 720,
+        "top": 0,
+        "src": "http://localhost:3001/belwee-super.mp4",
+        "paused": false,
+        "readyState": 4,
+        "playing": true
+      }
+    ],
+    "fixedLayers": [
+      {
+        "sel": "div.fixed.inset-0.z-0",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "position": "fixed",
+        "z": "0"
+      },
+      {
+        "sel": "div.fixed.inset-0.z-[5]",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "position": "fixed",
+        "z": "5"
+      },
+      {
+        "sel": "div.apple-mesh-bg",
+        "area": 1296000,
+        "w": 1440,
+        "h": 900,
+        "top": 0,
+        "position": "fixed",
+        "z": "-10"
+      },
+      {
+        "sel": "div.site-global-hamburger-backdrop",
+        "area": 1296000,
+        "w": 1440,
+        "h": 900,
+        "top": 0,
+        "position": "fixed",
+        "z": "2000"
+      },
+      {
+        "sel": "div.sticky.top-24.z-20",
+        "area": 118336,
+        "w": 1376,
+        "h": 86,
+        "top": 980,
+        "position": "sticky",
+        "z": "20"
+      },
+      {
+        "sel": "header.site-global-header",
+        "area": 83520,
+        "w": 1440,
+        "h": 58,
+        "top": 20,
+        "position": "fixed",
+        "z": "100"
+      }
+    ]
+  },
+  "contrast": {
+    "top": {
+      "navTint": {
+        "backgroundImage": "none",
+        "backdropFilter": "blur(0px) saturate(1)",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "contrastWorst": 2.87,
+          "contrastMean": 3.23
+        },
+        {
+          "label": "About",
+          "contrastWorst": 2.93,
+          "contrastMean": 3.26
+        },
+        {
+          "label": "Services",
+          "contrastWorst": 2.94,
+          "contrastMean": 3.31
+        },
+        {
+          "label": "Team",
+          "contrastWorst": 3.04,
+          "contrastMean": 3.42
+        },
+        {
+          "label": "Pet Knowledge",
+          "contrastWorst": 3.17,
+          "contrastMean": 3.37
+        },
+        {
+          "label": "Careers",
+          "contrastWorst": 3.17,
+          "contrastMean": 3.33
+        },
+        {
+          "label": "Contact",
+          "contrastWorst": 3.37,
+          "contrastMean": 3.61
+        },
+        {
+          "label": "logo",
+          "contrastWorst": 2.88,
+          "contrastMean": 3.29
+        }
+      ]
+    },
+    "scrolled": {
+      "navTint": {
+        "backgroundImage": "radial-gradient(130% 150% at 6% -20%, rgba(255, 255, 255, 0.56) 0px, rgba(255, 255, 255, 0.18) 32%, rgba(0, 0, 0, 0) 62%), linear-gradient(150deg, rgba(255, 255",
+        "backdropFilter": "blur(32px) saturate(2)",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "contrastWorst": 1.69,
+          "contrastMean": 1.8
+        },
+        {
+          "label": "About",
+          "contrastWorst": 1.84,
+          "contrastMean": 1.95
+        },
+        {
+          "label": "Services",
+          "contrastWorst": 1.96,
+          "contrastMean": 2.05
+        },
+        {
+          "label": "Team",
+          "contrastWorst": 2.09,
+          "contrastMean": 2.15
+        },
+        {
+          "label": "Pet Knowledge",
+          "contrastWorst": 2.15,
+          "contrastMean": 2.2
+        },
+        {
+          "label": "Careers",
+          "contrastWorst": 2.17,
+          "contrastMean": 2.21
+        },
+        {
+          "label": "Contact",
+          "contrastWorst": 2.1,
+          "contrastMean": 2.15
+        },
+        {
+          "label": "logo",
+          "contrastWorst": 1.54,
+          "contrastMean": 1.66
+        }
+      ]
+    }
+  }
+}

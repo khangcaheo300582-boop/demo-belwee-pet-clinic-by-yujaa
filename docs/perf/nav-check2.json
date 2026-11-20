@@ -1,0 +1,826 @@
+{
+  "label": "nav-check2",
+  "ts": "2026-10-19T15:13:30.683Z",
+  "base": "http://localhost:3001",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "gpu": {
+    "devices": [
+      " / Intel(R) UHD Graphics",
+      " / Microsoft Basic Render Driver"
+    ],
+    "glRenderer": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A7A9) Direct3D11 vs_5_0 ps_5_0, D3D11-31.0.101.5382)",
+    "compositing": "enabled",
+    "videoDecode": "enabled"
+  },
+  "scenarios": {},
+  "inventory": {
+    "elementCount": 1090,
+    "backdrops": [
+      {
+        "sel": "div#site-global-hamburger-card.site-global-hamburger-card.lg-material",
+        "area": 396638,
+        "w": 1129,
+        "h": 351,
+        "top": 82,
+        "value": "blur(12px) saturate(1.9)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "a.pt-glass.glass-surface.knowledge-card",
+        "area": 146200,
+        "w": 340,
+        "h": 430,
+        "top": 4642,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "div.footer-contact-card",
+        "area": 137852,
+        "w": 355,
+        "h": 388,
+        "top": 9253,
+        "value": "blur(20px) saturate(1.5)"
+      },
+      {
+        "sel": "div.pt-glass.glass-surface.h-full",
+        "area": 95200,
+        "w": 280,
+        "h": 340,
+        "top": 1156,
+        "value": "blur(22px) saturate(1.7)"
+      },
+      {
+        "sel": "li.footer-branch-card",
+        "area": 80662,
+        "w": 367,
+        "h": 220,
+        "top": 9765,
+        "value": "blur(20px) saturate(1.4)"
+      },
+      {
+        "sel": "li.footer-branch-card",
+        "area": 80662,
+        "w": 367,
+        "h": 220,
+        "top": 9765,
+        "value": "blur(20px) saturate(1.4)"
+      },
+      {
+        "sel": "nav.site-global-nav.liquid-glass-base.lg-material",
+        "area": 66816,
+        "w": 1152,
+        "h": 58,
+        "top": 20,
+        "value": "blur(12px) saturate(1.6)"
+      },
+      {
+        "sel": "li.footer-branch-card",
+        "area": 60258,
+        "w": 274,
+        "h": 220,
+        "top": 9765,
+        "value": "blur(20px) saturate(1.4)"
+      }
+    ],
+    "filters": [
+      {
+        "sel": "span.apple-mesh-blob.is-a1.offscreen-pausable",
+        "area": 651777,
+        "w": 807,
+        "h": 807,
+        "top": -121,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a3.offscreen-pausable",
+        "area": 635404,
+        "w": 873,
+        "h": 728,
+        "top": 510,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a2.offscreen-pausable",
+        "area": 618011,
+        "w": 786,
+        "h": 786,
+        "top": 25,
+        "value": "blur(60px)"
+      },
+      {
+        "sel": "h1.glass-heading.relative",
+        "area": 190080,
+        "w": 1440,
+        "h": 132,
+        "top": 274,
+        "value": "drop-shadow(rgba(20, 50, 120, 0.28) 0px 6px 18px)"
+      },
+      {
+        "sel": "span.site-global-ripple.site-global-ripple-init",
+        "area": 73571,
+        "w": 1173,
+        "h": 63,
+        "top": 18,
+        "value": "blur(0px)"
+      },
+      {
+        "sel": "h2.mt-4.text-3xl.sm:text-4xl",
+        "area": 55040,
+        "w": 1376,
+        "h": 40,
+        "top": 1074,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px)"
+      },
+      {
+        "sel": "p.hero-sub.text-lg.sm:text-2xl",
+        "area": 49152,
+        "w": 768,
+        "h": 64,
+        "top": 430,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.8) 0px 2px 12px)"
+      },
+      {
+        "sel": "span.absolute.rounded-full.blur-2xl",
+        "area": 33035,
+        "w": 198,
+        "h": 167,
+        "top": 2692,
+        "value": "blur(40px)"
+      },
+      {
+        "sel": "span.site-global-ripple.site-global-ripple-reverse",
+        "area": 24472,
+        "w": 1093,
+        "h": 22,
+        "top": 38,
+        "value": "blur(7px)"
+      },
+      {
+        "sel": "span.booking-lens-button__sweep",
+        "area": 8440,
+        "w": 115,
+        "h": 74,
+        "top": 521,
+        "value": "blur(7px)"
+      },
+      {
+        "sel": "img.footer-brand-img",
+        "area": 7680,
+        "w": 160,
+        "h": 48,
+        "top": 9253,
+        "value": "brightness(0) invert(1)"
+      },
+      {
+        "sel": "button.floating-contact-main",
+        "area": 4356,
+        "w": 66,
+        "h": 66,
+        "top": 806,
+        "value": "drop-shadow(rgba(0, 0, 0, 0.35) 0px 8px 24px)"
+      }
+    ],
+    "animations": [
+      {
+        "sel": "div.template-enter.min-h-screen",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "value": "template-visible-failsafe 0.8s 1"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a1.offscreen-pausable",
+        "area": 651777,
+        "w": 807,
+        "h": 807,
+        "top": -121,
+        "value": "appleAurora1 26s infinite"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a3.offscreen-pausable",
+        "area": 635404,
+        "w": 873,
+        "h": 728,
+        "top": 510,
+        "value": "appleAurora3 38s infinite"
+      },
+      {
+        "sel": "span.apple-mesh-blob.is-a2.offscreen-pausable",
+        "area": 618011,
+        "w": 786,
+        "h": 786,
+        "top": 25,
+        "value": "appleAurora2 32s infinite"
+      },
+      {
+        "sel": "span.glass-heading__sheen",
+        "area": 190080,
+        "w": 1440,
+        "h": 132,
+        "top": 274,
+        "value": "glassHeadingSheen 1.1s 1"
+      },
+      {
+        "sel": "span.site-global-ripple.site-global-ripple-init",
+        "area": 73571,
+        "w": 1173,
+        "h": 63,
+        "top": 18,
+        "value": "rippleInitWave 2s 1"
+      },
+      {
+        "sel": "span.stats-aura.animate-blob",
+        "area": 73307,
+        "w": 271,
+        "h": 271,
+        "top": 6489,
+        "value": "blob 7s infinite"
+      },
+      {
+        "sel": "span.stats-aura.animate-blob",
+        "area": 55284,
+        "w": 235,
+        "h": 235,
+        "top": 6447,
+        "value": "blob 7s infinite"
+      },
+      {
+        "sel": "span.area-map-pulse.absolute.rounded-full",
+        "area": 49170,
+        "w": 241,
+        "h": 204,
+        "top": 2674,
+        "value": "area-map-pulse 2.8s infinite"
+      },
+      {
+        "sel": "span.site-global-ripple.site-global-ripple-reverse",
+        "area": 24472,
+        "w": 1093,
+        "h": 22,
+        "top": 38,
+        "value": "rippleReverseIn 1.1s 1"
+      },
+      {
+        "sel": "span.footer-emergency-ring",
+        "area": 10648,
+        "w": 219,
+        "h": 49,
+        "top": 9473,
+        "value": "footerEmergencyPulse 2.4s infinite"
+      },
+      {
+        "sel": "span.booking-lens-button__sweep",
+        "area": 8440,
+        "w": 115,
+        "h": 74,
+        "top": 521,
+        "value": "ctSweepPass 5.2s infinite"
+      }
+    ],
+    "videos": [
+      {
+        "sel": "video.absolute.inset-0.h-full",
+        "area": 1296000,
+        "w": 1280,
+        "h": 720,
+        "top": 0,
+        "src": "http://localhost:3001/belwee-hero.mp4",
+        "paused": false,
+        "readyState": 4,
+        "playing": true
+      },
+      {
+        "sel": "video.absolute.inset-0.h-full",
+        "area": 1296000,
+        "w": 1280,
+        "h": 720,
+        "top": 0,
+        "src": "http://localhost:3001/belwee-super.mp4",
+        "paused": true,
+        "readyState": 4,
+        "playing": false
+      }
+    ],
+    "fixedLayers": [
+      {
+        "sel": "div.fixed.inset-0.z-0",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "position": "fixed",
+        "z": "0"
+      },
+      {
+        "sel": "div.fixed.inset-0.z-[5]",
+        "area": 12066255,
+        "w": 1440,
+        "h": 8379,
+        "top": 0,
+        "position": "fixed",
+        "z": "5"
+      },
+      {
+        "sel": "div.apple-mesh-bg",
+        "area": 1296000,
+        "w": 1440,
+        "h": 900,
+        "top": 0,
+        "position": "fixed",
+        "z": "-10"
+      },
+      {
+        "sel": "div.site-global-hamburger-backdrop",
+        "area": 1296000,
+        "w": 1440,
+        "h": 900,
+        "top": 0,
+        "position": "fixed",
+        "z": "2000"
+      },
+      {
+        "sel": "div.sticky.top-24.z-20",
+        "area": 118336,
+        "w": 1376,
+        "h": 86,
+        "top": 980,
+        "position": "sticky",
+        "z": "20"
+      },
+      {
+        "sel": "header.site-global-header",
+        "area": 83520,
+        "w": 1440,
+        "h": 58,
+        "top": 20,
+        "position": "fixed",
+        "z": "100"
+      }
+    ]
+  },
+  "contrast": {
+    "top": {
+      "navTint": {
+        "className": "site-global-nav liquid-glass-base lg-material is-at-top ",
+        "backgroundImage": "radial-gradient(130% 150% at 6% -20%, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.043) 32%, rgba(0, 0, 0, 0) 62%), linear-gradient(150deg, rgba(16, 27,",
+        "backdropFilter": "blur(12px) saturate(1.6)"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "role": "current",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0879,
+            "p5": 0.0641,
+            "p95": 0.0953
+          },
+          "contrastMean": 7.61,
+          "contrastWorst": 7.23,
+          "passesAA": true
+        },
+        {
+          "label": "About",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0496,
+            "p5": 0.0285,
+            "p95": 0.049
+          },
+          "contrastMean": 10.55,
+          "contrastWorst": 10.6,
+          "passesAA": true
+        },
+        {
+          "label": "Services",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0429,
+            "p5": 0.0251,
+            "p95": 0.0382
+          },
+          "contrastMean": 11.31,
+          "contrastWorst": 11.91,
+          "passesAA": true
+        },
+        {
+          "label": "Team",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0425,
+            "p5": 0.0261,
+            "p95": 0.0358
+          },
+          "contrastMean": 11.35,
+          "contrastWorst": 12.23,
+          "passesAA": true
+        },
+        {
+          "label": "Pet Knowledge",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.046,
+            "p5": 0.0263,
+            "p95": 0.0404
+          },
+          "contrastMean": 10.94,
+          "contrastWorst": 11.62,
+          "passesAA": true
+        },
+        {
+          "label": "Careers",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0403,
+            "p5": 0.0261,
+            "p95": 0.0339
+          },
+          "contrastMean": 11.63,
+          "contrastWorst": 12.52,
+          "passesAA": true
+        },
+        {
+          "label": "Contact",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0394,
+            "p5": 0.025,
+            "p95": 0.0305
+          },
+          "contrastMean": 11.75,
+          "contrastWorst": 13.04,
+          "passesAA": true
+        }
+      ]
+    },
+    "top-hover": {
+      "navTint": {
+        "className": "site-global-nav liquid-glass-base lg-material is-at-top ",
+        "backgroundImage": "radial-gradient(130% 150% at 6% -20%, rgba(255, 255, 255, 0.14) 0px, rgba(255, 255, 255, 0.043) 32%, rgba(0, 0, 0, 0) 62%), linear-gradient(150deg, rgba(16, 27,",
+        "backdropFilter": "blur(12px) saturate(1.6)"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "role": "current",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0838,
+            "p5": 0.0641,
+            "p95": 0.0953
+          },
+          "contrastMean": 7.85,
+          "contrastWorst": 7.23,
+          "passesAA": true
+        },
+        {
+          "label": "About",
+          "role": "hover",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0855,
+            "p5": 0.0513,
+            "p95": 0.1185
+          },
+          "contrastMean": 7.75,
+          "contrastWorst": 6.23,
+          "passesAA": true
+        },
+        {
+          "label": "Services",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0382,
+            "p5": 0.0251,
+            "p95": 0.0382
+          },
+          "contrastMean": 11.9,
+          "contrastWorst": 11.91,
+          "passesAA": true
+        },
+        {
+          "label": "Team",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0382,
+            "p5": 0.0261,
+            "p95": 0.0358
+          },
+          "contrastMean": 11.9,
+          "contrastWorst": 12.23,
+          "passesAA": true
+        },
+        {
+          "label": "Pet Knowledge",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0402,
+            "p5": 0.0263,
+            "p95": 0.038
+          },
+          "contrastMean": 11.64,
+          "contrastWorst": 11.93,
+          "passesAA": true
+        },
+        {
+          "label": "Careers",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0363,
+            "p5": 0.0261,
+            "p95": 0.0339
+          },
+          "contrastMean": 12.17,
+          "contrastWorst": 12.52,
+          "passesAA": true
+        },
+        {
+          "label": "Contact",
+          "role": "link",
+          "color": "rgb(255, 255, 255)",
+          "textLum": 1,
+          "bgLum": {
+            "mean": 0.0349,
+            "p5": 0.025,
+            "p95": 0.0305
+          },
+          "contrastMean": 12.37,
+          "contrastWorst": 13.04,
+          "passesAA": true
+        }
+      ]
+    },
+    "scrolled": {
+      "navTint": {
+        "className": "site-global-nav liquid-glass-base lg-material is-active is-glass is-morph",
+        "backgroundImage": "radial-gradient(130% 150% at 6% -20%, rgba(255, 255, 255, 0.38) 0px, rgba(255, 255, 255, 0.12) 32%, rgba(0, 0, 0, 0) 62%), linear-gradient(150deg, rgba(255, 255",
+        "backdropFilter": "blur(12px) saturate(1.6)"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "role": "current",
+          "color": "rgb(29, 78, 216)",
+          "textLum": 0.1067,
+          "bgLum": {
+            "mean": 0.8834,
+            "p5": 0.7782,
+            "p95": 0.9524
+          },
+          "contrastMean": 5.96,
+          "contrastWorst": 5.29,
+          "passesAA": true
+        },
+        {
+          "label": "About",
+          "role": "link",
+          "color": "rgb(29, 78, 216)",
+          "textLum": 0.1067,
+          "bgLum": {
+            "mean": 0.8073,
+            "p5": 0.7758,
+            "p95": 0.8372
+          },
+          "contrastMean": 5.47,
+          "contrastWorst": 5.27,
+          "passesAA": true
+        },
+        {
+          "label": "Services",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7848,
+            "p5": 0.7605,
+            "p95": 0.8053
+          },
+          "contrastMean": 14.19,
+          "contrastWorst": 13.78,
+          "passesAA": true
+        },
+        {
+          "label": "Team",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7693,
+            "p5": 0.7511,
+            "p95": 0.7876
+          },
+          "contrastMean": 13.93,
+          "contrastWorst": 13.62,
+          "passesAA": true
+        },
+        {
+          "label": "Pet Knowledge",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7551,
+            "p5": 0.7319,
+            "p95": 0.7721
+          },
+          "contrastMean": 13.69,
+          "contrastWorst": 13.29,
+          "passesAA": true
+        },
+        {
+          "label": "Careers",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7529,
+            "p5": 0.7358,
+            "p95": 0.7672
+          },
+          "contrastMean": 13.65,
+          "contrastWorst": 13.36,
+          "passesAA": true
+        },
+        {
+          "label": "Contact",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7616,
+            "p5": 0.7444,
+            "p95": 0.7775
+          },
+          "contrastMean": 13.8,
+          "contrastWorst": 13.51,
+          "passesAA": true
+        }
+      ]
+    },
+    "scrolled-hover": {
+      "navTint": {
+        "className": "site-global-nav liquid-glass-base lg-material is-active is-glass is-morph",
+        "backgroundImage": "radial-gradient(130% 150% at 6% -20%, rgba(255, 255, 255, 0.38) 0px, rgba(255, 255, 255, 0.12) 32%, rgba(0, 0, 0, 0) 62%), linear-gradient(150deg, rgba(255, 255",
+        "backdropFilter": "blur(12px) saturate(1.6)"
+      },
+      "perLabel": [
+        {
+          "label": "Home",
+          "role": "current",
+          "color": "rgb(29, 78, 216)",
+          "textLum": 0.1067,
+          "bgLum": {
+            "mean": 0.8777,
+            "p5": 0.7396,
+            "p95": 0.9524
+          },
+          "contrastMean": 5.92,
+          "contrastWorst": 5.04,
+          "passesAA": true
+        },
+        {
+          "label": "About",
+          "role": "hover",
+          "color": "rgb(29, 78, 216)",
+          "textLum": 0.1067,
+          "bgLum": {
+            "mean": 0.8718,
+            "p5": 0.747,
+            "p95": 0.9437
+          },
+          "contrastMean": 5.88,
+          "contrastWorst": 5.09,
+          "passesAA": true
+        },
+        {
+          "label": "Services",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7769,
+            "p5": 0.7546,
+            "p95": 0.8053
+          },
+          "contrastMean": 14.06,
+          "contrastWorst": 13.68,
+          "passesAA": true
+        },
+        {
+          "label": "Team",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7635,
+            "p5": 0.7454,
+            "p95": 0.7876
+          },
+          "contrastMean": 13.83,
+          "contrastWorst": 13.52,
+          "passesAA": true
+        },
+        {
+          "label": "Pet Knowledge",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7455,
+            "p5": 0.7315,
+            "p95": 0.7721
+          },
+          "contrastMean": 13.53,
+          "contrastWorst": 13.29,
+          "passesAA": true
+        },
+        {
+          "label": "Careers",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7457,
+            "p5": 0.7328,
+            "p95": 0.7672
+          },
+          "contrastMean": 13.53,
+          "contrastWorst": 13.31,
+          "passesAA": true
+        },
+        {
+          "label": "Contact",
+          "role": "link",
+          "color": "rgb(15, 23, 42)",
+          "textLum": 0.0088,
+          "bgLum": {
+            "mean": 0.7533,
+            "p5": 0.7412,
+            "p95": 0.7775
+          },
+          "contrastMean": 13.66,
+          "contrastWorst": 13.45,
+          "passesAA": true
+        }
+      ]
+    }
+  }
+}
