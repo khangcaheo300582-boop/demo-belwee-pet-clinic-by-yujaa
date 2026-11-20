@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Belwee Pet Clinic — Web Platform
 
-## Getting Started
+Ứng dụng web cho **Belwee Pet Clinic**, xây dựng bằng **Next.js (App Router)** và **TypeScript**.
 
-First, run the development server:
+## Tính năng chính
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Trang giới thiệu phòng khám, kiến thức thú y, liên hệ và tuyển dụng
+- Tiện ích đặt lịch, tài khoản khách hàng và trang cá nhân
+- Khu vực quản lý dành cho nhân viên (`staff`) cùng hệ thống kiểm thử, giám sát lỗi (Sentry) và bảo mật tích hợp
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Công nghệ sử dụng
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Nhóm                  | Công nghệ                               |
+| :-------------------- | :-------------------------------------- |
+| Framework             | Next.js (App Router), React, TypeScript |
+| Styling               | Tailwind CSS, PostCSS                   |
+| Monitoring & Security | Sentry, Middleware / Security Audit     |
+| Kiểm thử & Chất lượng | Vitest, Playwright, ESLint, Husky       |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Hướng dẫn chạy dự án ở máy local
 
-## Learn More
+1. **Cài đặt thư viện:**
+   Chạy lệnh `npm install` tại thư mục gốc `belwee-pet-clinic`.
 
-To learn more about Next.js, take a look at the following resources:
+2. **Cấu hình biến môi trường:**
+   Tạo file `.env.local` dựa trên `.env.example` và điền các biến kết nối cần thiết.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Khởi chạy server phát triển:**
+   Chạy lệnh `npm run dev` và truy cập `http://localhost:3000` trên trình duyệt.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cấu trúc thư mục chính
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `app/` — Các route, trang giao diện và API của ứng dụng
+- `components/` — Các component giao diện tái sử dụng
+- `hooks/` — Custom React hooks
+- `lib/` — Hàm tiện ích và xử lý logic dùng chung
+- `public/` — Tài nguyên tĩnh (hình ảnh, biểu tượng...)
+- `scripts/` — Các script kiểm tra tự động
+- `security/` — Cấu hình bảo mật, CSRF, rate-limit và kiểm tra request
+- `tests/` — Kiểm thử API và End-to-End (E2E)
