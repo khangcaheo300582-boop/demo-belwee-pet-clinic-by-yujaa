@@ -1,8 +1,9 @@
 <p align="center">
   <img src="./public/belwee-logo-intro.webp" alt="Belwee Intro Logo" width="560" />
 </p>
-# Belwee Pet Clinic — Web Platform
- 
+<h1 align="center">
+  <img src="./public/title-belwee.svg" alt="Belwee Pet Clinic — Web Platform" width="100%" />
+</h1>
 <p align="center">
   <a href="https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa/raw/main/public/belwee-logo-intro-a.mp4">▶ Xem video intro có tiếng</a>
 </p>
@@ -167,6 +168,7 @@ npm run dev
 ```
  
 </details>
+ 
 <details>
 <summary><b>🍎 macOS</b></summary>
 &nbsp;
