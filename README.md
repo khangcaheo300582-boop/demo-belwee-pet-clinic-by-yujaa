@@ -1,57 +1,79 @@
-# Belwee Pet Clinic — Web Platform
-
-https://github.com/user-attachments/assets/e4632983-0dc5-4ed2-8b7d-b5556a60a58d
-
-<p align="left">
-  <img src="./public/logo-belwee.png" alt="Belwee Logo" height="44" />
-  <img src="./public/belwee-phong-kham.png" alt="Belwee Phòng Khám Icon" height="44" />
-  <img src="./public/apple-touch-icon.png" alt="Belwee App Icon" height="44" />
+<p align="center">
+  <img src="./public/belwee-logo-intro.webp" alt="Belwee Intro Logo" width="560" />
 </p>
 
-Ứng dụng web toàn diện dành cho **Belwee Pet Clinic**, kết nối trực tiếp khách hàng nuôi thú cưng với đội ngũ bác sĩ và nhân viên phòng khám, phát triển trên nền tảng **Next.js (App Router)** và **TypeScript**.
+# Belwee Pet Clinic — Web Platform
+
+<p align="center">
+  <a href="https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa/raw/main/public/belwee-logo-intro-a.mp4">▶ Xem video intro có tiếng</a>
+</p>
+
+<table>
+  <tr>
+    <td width="68%" valign="middle">
+      Ứng dụng web toàn diện dành cho <b>Belwee Pet Clinic</b>, kết nối trực tiếp khách hàng nuôi thú cưng với đội ngũ bác sĩ và nhân viên phòng khám, phát triển trên nền tảng <b>Next.js (App Router)</b> và <b>TypeScript</b>.
+    </td>
+    <td width="32%" align="center" valign="middle">
+      <img src="./public/logo-belwee.png" alt="Belwee" width="100%" />
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## NGƯỜI PHÁT TRIỂN
 
-- **Tác giả / Người phát triển:** Yujaaz (`khangcaheo300582-boop`)
-- **Đơn vị áp dụng:** Belwee Pet Clinic
-- **Chuyên môn & Vai trò:** Full-stack Web Development, UI/UX & Interactive Design, Digital Marketing & Conversion Flow, Security & QA Integration
-- **Liên hệ:** `khangcaheo300582@gmail.com` • Facebook: **Gra Yujaa**
+<table>
+  <tr>
+    <td width="68%" valign="middle">
+      <b>Tác giả / Người phát triển:</b> Yujaaz (<code>khangcaheo300582-boop</code>)<br>
+      <b>Đơn vị áp dụng:</b> Belwee Pet Clinic<br>
+      <b>Chuyên môn &amp; Vai trò:</b> Full-stack Web Development, UI/UX &amp; Interactive Design, Digital Marketing &amp; Conversion Flow, Security &amp; QA Integration<br>
+      <b>Liên hệ:</b> <code>khangcaheo300582@gmail.com</code> • Facebook: <b>Gra Yujaa</b>
+    </td>
+    <td width="32%" align="center" valign="middle">
+      <img src="./public/admin-fkd.png?v=2" alt="Người phát triển - Yujaaz" width="180" />
+    </td>
+  </tr>
+</table>
 
-<img src="./public/admin-fkd.png?v=2" alt="Người phát triển - Yujaaz" width="180" />
+<p>
+  <a href="https://github.com/khangcaheo300582-boop"><img src="https://img.shields.io/badge/GitHub-khangcaheo300582--boop-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+  <a href="https://facebook.com/"><img src="https://img.shields.io/badge/Facebook-Gra%20Yujaa-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" /></a>
+  <a href="mailto:khangcaheo300582@gmail.com"><img src="https://img.shields.io/badge/Gmail-khangcaheo300582@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" /></a>
+</p>
 
 ---
 
 ## TÍNH NĂNG
 
-- Đặt lịch và theo dõi trạng thái lịch hẹn theo thời gian thực qua các bước **State 1 → State 2 → State 3**, nhận cập nhật tức thì từ phòng khám.
+- **Đặt lịch và theo dõi trạng thái lịch hẹn theo thời gian thực** qua các bước **State 1 → State 2 → State 3**, khách hàng nhận cập nhật tức thì từ phòng khám.
 
 <p align="center">
   <img src="./public/baner-state.png?v=2" alt="Trạng thái lịch hẹn" width="100%" />
 </p>
 
-- Hiển thị dịch vụ theo từng nhóm dạng thẻ, giúp khách hàng chọn đúng dịch vụ phù hợp cho thú cưng.
+- **Danh mục dịch vụ theo nhóm** dạng thẻ, giúp khách hàng chọn đúng dịch vụ phù hợp cho thú cưng.
 
 <p align="center">
   <img src="./public/baner-dich-vu.png" alt="Danh mục dịch vụ" width="100%" />
 </p>
 
-- Giao diện trang chủ và kết nối thú y, tối ưu chuyển đổi khách hàng.
+- **Giao diện trang chủ và kết nối thú y**, tối ưu chuyển đổi khách hàng.
 
 <p align="center">
-  <img src="./public/ktty1.png" alt="Giao diện 1" width="49%" />
-  <img src="./public/ktty2.png" alt="Giao diện 2" width="49%" />
+  <img src="./public/ktty1.png" alt="Giao diện trang chủ 1" width="49%" />
+  <img src="./public/ktty2.png" alt="Giao diện trang chủ 2" width="49%" />
 </p>
 
-- Giám sát hệ thống: theo dõi hoạt động, ghi log và phát hiện bất thường để vận hành ổn định.
+- **Giám sát hệ thống:** theo dõi hoạt động, ghi log và phát hiện bất thường để vận hành ổn định.
 
 <p align="center">
   <img src="./public/Gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%201.png" alt="Giám sát hệ thống 1" width="49%" />
   <img src="./public/gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%202.png" alt="Giám sát hệ thống 2" width="49%" />
 </p>
 
-- Phân quyền truy cập theo vai trò (quản trị, nhân viên, khách hàng), đúng người đúng chức năng.
+- **Phân quyền truy cập** theo vai trò (quản trị, nhân viên, khách hàng), đúng người đúng chức năng.
 
 <p align="center">
   <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%201.png" alt="Phân quyền 1" width="49%" />
@@ -87,7 +109,7 @@ https://github.com/user-attachments/assets/e4632983-0dc5-4ed2-8b7d-b5556a60a58d
    npm install
    ```
 
-3. **Cấu hình môi trường:** sao chép `.env.example` thành `.env.local` rồi điền các giá trị cần thiết (database, SMTP, secret xác thực...).
+3. **Cấu hình môi trường:** sao chép `.env.example` thành `.env.local`, rồi điền các giá trị cần thiết (database, SMTP, secret xác thực...).
 
    ```bash
    cp .env.example .env.local
@@ -106,21 +128,22 @@ https://github.com/user-attachments/assets/e4632983-0dc5-4ed2-8b7d-b5556a60a58d
 ## Cấu trúc thư mục
 
 ```text
-belwee-pet-clinic/
-├── app/               # Next.js App Router: pages, layouts, API routes
-│   ├── api/           # Route handlers (API)
-│   └── (pages)/       # Các trang giao diện
-├── components/        # Component giao diện dùng chung
-├── lib/               # Logic nghiệp vụ, tiện ích, cấu hình
-├── public/            # Ảnh, video, logo, service worker (sw.js)
-├── screenshots/       # Ảnh chụp màn hình dự án
-├── middleware.ts      # Middleware xác thực, bảo mật
-├── next.config.mjs    # Cấu hình Next.js
-├── tailwind.config.ts # Cấu hình Tailwind CSS
-├── vitest.config.ts   # Cấu hình unit test
-├── playwright.config.ts # Cấu hình e2e test
+demo-belwee-pet-clinic-by-yujaa/
+├── app/                   # Next.js App Router: pages, layouts, API routes
+│   ├── api/               # Route handlers (API)
+│   └── (pages)/           # Các trang giao diện
+├── components/            # Component giao diện dùng chung
+├── lib/                   # Logic nghiệp vụ, tiện ích, cấu hình
+├── public/                # Ảnh, video, logo dùng cho giao diện và README
+├── screenshots/           # Ảnh chụp màn hình dự án
+├── middleware.ts          # Middleware xác thực, bảo mật
+├── next.config.mjs        # Cấu hình Next.js
+├── tailwind.config.ts     # Cấu hình Tailwind CSS
+├── vitest.config.ts       # Cấu hình unit test
+├── playwright.config.ts   # Cấu hình e2e test
 └── README.md
 ```
 
-
-
+<p align="center">
+  <sub>© Belwee Pet Clinic — Phát triển bởi Yujaaz</sub>
+</p>
