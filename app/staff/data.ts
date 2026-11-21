@@ -13,12 +13,13 @@ export interface StaffNavItem {
   label: string;
   labelEn: string;
   /** Key into the icon set rendered by StaffNavbar. */
-  icon: 'team' | 'chat' | 'rules' | 'profile';
+  icon: 'team' | 'chat' | 'rules' | 'profile' | 'bell';
 }
 
 export const STAFF_NAV_ITEMS: readonly StaffNavItem[] = [
   { href: '/staff/team', label: 'Nhân viên', labelEn: 'Team', icon: 'team' },
   { href: '/staff/chat', label: 'Chatbox Nội Bộ', labelEn: 'Internal Chat', icon: 'chat' },
   { href: '/staff/rules', label: 'Nội quy tuân thủ', labelEn: 'Compliance Rules', icon: 'rules' },
+  { href: '/staff/notifications', label: 'Thông báo nhắc lịch', labelEn: 'Reminders', icon: 'bell' },
   { href: '/staff/profile', label: 'Trang cá nhân', labelEn: 'My Profile', icon: 'profile' },
 ] as const;

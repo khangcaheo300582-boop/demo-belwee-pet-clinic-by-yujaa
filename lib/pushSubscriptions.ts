@@ -126,6 +126,20 @@ export const dbPushSubscriptions = {
     });
   },
 
+  /** Xoá theo subId (unsubscribe từ trang khách có session). */
+  async removeBySubId(subId: string): Promise<number> {
+    return store.update((rows) => {
+      const idx = rows.findIndex((row) => row.subId === subId && row.status === 'granted');
+      if (idx === -1) return 0;
+      rows.splice(idx, 1);
+      return 1;
+    });
+  },
+
+  async listAll(): Promise<PushSubscription[]> {
+    return store.read();
+  },
+
   /** Mark a subscription as error/expired (adapter hook). */
   async markFailed(endpoint: string, error: string): Promise<void> {
     await store.update((rows) => {

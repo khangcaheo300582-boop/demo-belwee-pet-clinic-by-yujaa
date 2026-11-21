@@ -31,6 +31,8 @@ import {
 } from 'lucide-react';
 import PetSpeciesPicker from '@/components/PetSpeciesPicker';
 import NotificationToggle from '@/components/NotificationToggle';
+import BrowserNotificationsToggle from '@/components/BrowserNotificationsToggle';
+import NotificationTypesCard from '@/components/NotificationTypesCard';
 import BookingNotificationListener from '@/components/BookingNotificationListener';
 import type { StaffNotification } from '@/lib/dbNotifications';
 import { validatePetSpecies } from '@/lib/petSpecies';
@@ -599,7 +601,10 @@ export default function ProfilePage() {
                 }}
               />
 
-              <div className="space-y-3">
+              <BrowserNotificationsToggle />
+              <NotificationTypesCard />
+
+              <div className="mt-4 space-y-3">
                 <h4 className="flex items-center gap-2 text-sm font-bold text-[var(--pf-text)]">
                   <History className="size-4" aria-hidden="true" />
                   Lịch sử thông báo

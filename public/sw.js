@@ -1,31 +1,47 @@
-/* public/sw.js — Belwee Pet Clinic push notification service worker (spike v1)
+/* public/sw.js — Belwee Pet Clinic — service worker cho Web Push.
  *
- * Design invariants (kept):
- * - showNotification is driven from the SW so pushes arrive while no tab is open.
- * - Notification click → focus an existing window on our origin, or open the
- *   target page; the page may then run its own tracking hook via
- *   data.tracking.
- * - The raw customer email never goes into the push payload or the notification
- *   click target: channels.userChannel() hashes the address (lib/channels.ts).
+ * - push: GET /api/notifications/latest?subId=X → showNotification(title, body, icon, data).
+ * - notificationclick → openWindow(url) hoặc focus tab đang có; tracking pixel /api/notifications/track?id=<logId>&action=click.
+ * - onmessage 'notify' + 'get-subscription': đường dây debug/spike (web-push thử nghiệm của giai đoạn B).
  */
 
-const MAX_VISIBLE = 5;
+const LATEST_URL = '/api/notifications/latest';
+
+self.addEventListener('push', (event) => {
+  event.waitUntil(handlePush());
+});
+
+async function handlePush() {
+  let data = { url: '/client-portal' };
+  try {
+    const res = await fetch(`${LATEST_URL}${self.location.search || ''}`, { method: 'GET', credentials: 'include' });
+    const json = await res.json().catch(() => null);
+    if (res.ok && json && json.ok) data = json;
+  } catch {
+    /* Offline: vẫn hiện thông báo đã lưu của hệ thống, mặc định URL /client-portal. */
+  }
+  const title = data.title || 'Belwee Pet Clinic';
+  const body = data.body || '';
+  const url = data.url || '/client-portal';
+  const tag = `belewee-ntf-${data.id || Date.now()}`;
+  await self.registration.showNotification(title, {
+    body,
+    icon: '/icon-512.png',
+    badge: '/icon-512.png',
+    tag,
+    data: { url, id: data.id, subId: self.registration.scope },
+    lang: 'vi',
+    dir: 'ltr',
+  });
+}
 
 self.addEventListener('notificationclick', (event) => {
-  console.log('[SW] notificationclick');
   event.preventDefault();
   const data = (event.notification.data || {}) || {};
-  event.notification.close();
-  const url = typeof data.url === 'string' ? data.url : '/client-portal';
-  const recordEvent = (channel, eventType) => {
-    if (data.tracking && data.tracking[eventType]) {
-      const trackUrl = data.tracking[eventType];
-      const img = new Image();
-      img.src = trackUrl.replace(/\{nid\}/g, String(data.req || ''));
-    }
-  };
-
-  recordEvent(undefined, 'click');
+  const url = data.url || '/client-portal';
+  if (data.id) {
+    try { new Image().src = `/api/notifications/track?id=${encodeURIComponent(data.id)}&action=click`; } catch { /* ignore */ }
+  }
   event.waitUntil(
     self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((all) => {
       const sameOrigin = all.find((client) => new URL(client.url).origin === self.location.origin);
@@ -35,36 +51,20 @@ self.addEventListener('notificationclick', (event) => {
   );
 });
 
-self.addEventListener('message', (event) => {
-  console.log('[SW] message received:', event.data && event.data.type);
-  try {
-    self.onmessage(event);
-  } catch (e) {
-    console.log('[SW] onmessage error:', String(e));
-  }
-});
-
-self.onmessage = async (event) => {
+/* ─── Dev/spike channel (không phải sản phẩm — dùng cho giai đoạn thử nghiệm SW) ─── */
+self.addEventListener('message', async (event) => {
   const msg = event.data;
   if (!msg || typeof msg !== 'object') return;
-
   if (msg.type === 'notify') {
-    console.log('[SW] showing notification:', msg.title);
-    const ok = self.registration.showNotification(msg.title, {
-      body: msg.body,
-      icon: msg.icon || '/icon-512.png',
-      badge: msg.icon || '/icon-512.png',
-      tag: msg.tag || `belewee-ntf-${Date.now()}`,
-      data: { url: msg.url || '/client-portal', req: msg.req || null },
-      lang: msg.lang || 'vi',
-      dir: 'ltr',
-      renotify: true,
-      priority: 'high',
-    });
-    event.source?.postMessage({ type: 'shown', ok: !!ok });
-    self.registration.update();
+    event.waitUntil(
+      self.registration.showNotification(msg.title || 'NHẮC LỊCH', {
+        body: msg.body || '',
+        icon: msg.icon || '/icon-512.png',
+        tag: msg.tag || `belewee-ntf-${Date.now()}`,
+        data: { url: msg.url || '/client-portal', req: msg.req },
+      })
+    );
   } else if (msg.type === 'get-subscription') {
-    console.log('[SW] get-subscription');
     const sub = await self.registration.pushManager.getSubscription();
     event.source?.postMessage({
       type: 'subscription',
@@ -73,4 +73,4 @@ self.onmessage = async (event) => {
       auth: sub?.keys?.auth ?? null,
     });
   }
-};
+});

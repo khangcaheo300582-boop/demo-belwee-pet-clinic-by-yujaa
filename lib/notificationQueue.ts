@@ -42,8 +42,6 @@ export interface NotificationQueueItem {
  * Những hàng đã gửi thành công chưa nhận lại lần 2 (engine không gửi lặp lại
  * một item đã được markSent). FAILED giữ lại cải thiện thông tin cho operator.
  */
-const SENT_TYPES = ['SENT', 'CANCELLED'] as const;
-
 const CHANNEL_CODES = ['email', 'desktop', 'push'] as const;
 
 function generateId(): string {
@@ -111,8 +109,6 @@ export const dbNotificationQueue = {
     return store.update((rows) => {
       const existing = rows.find((row) => row.idempotencyKey === key);
       if (existing) {
-        // Enqueue idempotent: chỉ mãi CANCELLED/SENT là dùng kết quả cũ.
-        // FAILED/QUEUED → cập nhật gần gũi nhất từ caller và quay về QUEUED.
         if (existing.status !== 'SENT' && existing.status !== 'CANCELLED') {
           existing.status = 'QUEUED';
           existing.sendAt = input.sendAt;
@@ -260,6 +256,19 @@ export const dbNotificationQueue = {
       failed: count('FAILED'),
       sentByChannel,
     };
+  },
+
+  /** Admin: reset một row FAILED về QUEUED để admin có thể retry nó thủ công. */
+  async markRetryable(id: string): Promise<boolean> {
+    return store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === id);
+      if (!row) return false;
+      row.status = 'QUEUED';
+      row.attempts = 0;
+      row.lastError = null;
+      row.updatedAt = new Date().toISOString();
+      return true;
+    });
   },
 
   async retryAllFailed(): Promise<number> {
