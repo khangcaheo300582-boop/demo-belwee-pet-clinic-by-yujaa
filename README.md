@@ -60,11 +60,9 @@ Cung cấp bài viết kiến thức thú y, thông tin dịch vụ và các chi
 Khu vực làm việc dành cho nhân viên và quản trị viên để xử lý nghiệp vụ và vận hành hệ thống.
 
 <p>
-  <img src="./public/%E1%BA%A3nh%20%C4%91%C3%A3%20ch%E1%BB%A5p%20m%C3%A0n%20h%C3%ACnh%20ph%C3%A2n%20quy%E1%BB%81n%201" alt="Phân quyền 1" width="48%" />
+  <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%201.png" alt="Phân quyền 1" width="48%" />
   <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%202.png" alt="Phân quyền 2" width="48%" />
 </p>
-
-_(Lưu ý: Nếu file ảnh đầu tiên trong thư mục `public/` của bạn có tên chính xác là `phân quyền 1.png`, hãy đổi đường dẫn tương ứng thành `./public/ph%C3%A2n%20quy%E1%BB%81n%201.png`)._
 
 ### 6. Giám sát hệ thống & Bảo mật
 
@@ -72,10 +70,8 @@ Theo dõi hoạt động hệ thống, kiểm soát bảo mật và hỗ trợ p
 
 <p>
   <img src="./public/Gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%201.png" alt="Giám sát hệ thống 1" width="48%" />
-  <img src="./public/gi%C3%A1m%20s%C3%A1t%20h%E1%BB%99%20th%E1%BB%91ng%202.png" alt="Giám sát hệ thống 2" width="48%" />
+  <img src="./public/gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%202.png" alt="Giám sát hệ thống 2" width="48%" />
 </p>
-
-_(Lưu ý: Nếu file ảnh thứ hai trong `public/` có tên là `giám sát hệ thống 2.png`, hãy cập nhật lại chữ `hệ` thay cho `hộ` trên đường dẫn trên)._
 
 ---
 
