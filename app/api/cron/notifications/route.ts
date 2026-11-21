@@ -29,6 +29,9 @@ async function runEngineRoute(request: NextRequest): Promise<Response> {
   if (!isAuthorized(request)) {
     return NextResponse.json({ ok: false, error: 'Unauthorized.' }, { status: 401 });
   }
+  if (process.env.NOTIFICATIONS_ENGINE_ENABLED === 'false') {
+    return NextResponse.json({ ok: true, summary: { computed: 0, enqueued: 0, sent: { email: 0, desktop: 0, push: 0 }, cancelled: 0, failed: 0, skipped: 0, disabled: true } });
+  }
   try {
     const summary = await runEngine();
     return NextResponse.json({ ok: true, summary });
