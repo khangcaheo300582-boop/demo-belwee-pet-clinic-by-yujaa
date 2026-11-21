@@ -77,6 +77,7 @@ export function startOfDayInTz(d: Date, timezone: string | null | undefined): Da
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
+    hourCycle: 'h23',
   });
   const parts = Object.fromEntries(
     formatter.formatToParts(d)
@@ -108,7 +109,7 @@ function channelsFor(prefs: CustomerNotificationPreferences | null, type: Notifi
   if ((prefs.channels.email ?? true)) out.push('email');
   if (prefs.channels.desktop === true) out.push('desktop');
   if (prefs.channels.push === true) out.push('push');
-  return out.filter((c) => prefs.types[type] !== false);
+  return prefs.types[type] === false ? [] : out;
 }
 
 function appointmentHour(prefs: CustomerNotificationPreferences | null): number {
@@ -116,7 +117,7 @@ function appointmentHour(prefs: CustomerNotificationPreferences | null): number 
   return parseHHmm(typeof start === 'string' && start.length === 5 ? start : '09:00');
 }
 
-async function dueItemFromBooking(b: Booking, now: Date): Promise<DueItem | null> {
+async function dueItemFromBooking(b: Booking): Promise<DueItem | null> {
   const iso = normalizeDateInput(b.time || '');
   if (!iso) return null;
   const prefs = await dbCustomerNotificationPreferences.read(b.customerEmail);
@@ -198,7 +199,7 @@ export async function computeDue(now: string = new Date().toISOString()): Promis
   const out: DueItem[] = [];
   const bookings = await listAllBookings({ status: 'CONFIRMED' });
   for (const b of bookings) {
-    const item = await dueItemFromBooking(b, new Date(now));
+    const item = await dueItemFromBooking(b);
     if (item) out.push(item);
   }
   out.push(...(await dueItemsFromRecords(new Date(now))));
@@ -253,11 +254,6 @@ async function deliverChannel(item: QueueRowLog, channel: NotificationChannel): 
     await dbDeliveryLog.markFailed(logId, error instanceof Error ? error.message : String(error));
     return false;
   }
-}
-
-/** Tất cả channels trong `list` đã được mark thành công → row SENT. */
-function rowComplete(row: { channels: NotificationChannel[]; sentChannels: NotificationChannel[] }): boolean {
-  return row.channels.length > 0 && row.channels.every((c) => row.sentChannels.includes(c));
 }
 
 export async function runEngine(): Promise<EngineSummary> {
