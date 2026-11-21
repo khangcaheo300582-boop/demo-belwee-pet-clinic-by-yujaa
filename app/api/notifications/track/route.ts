@@ -8,9 +8,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { dbDeliveryLog } from '@/lib/deliveryLog';
 
-// 1x1 transparent GIF, chuẩn base64
-const GIF_1X1 =
-  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==';
+// 1x1 transparent GIF (chuẩn base64, màu đen tương đương transparent).
+const GIF_1X1 = 'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 export async function GET(request: NextRequest): Promise<Response> {
   const { searchParams } = new URL(request.url);
