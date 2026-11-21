@@ -1,6 +1,6 @@
 # Belwee Pet Clinic — Web Platform
 
-> **Video Intro Logo:** [Xem `belwee-logo-intro-a.mp4`](./public/belwee-logo-intro-a.mp4)
+> **Video Intro Logo:** [Xem `belwee-logo-intro-a.mp4`](https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa/raw/main/public/belwee-logo-intro-a.mp4)
 
 <p align="left">
   <img src="./public/logo-belwee.png" alt="Belwee Logo" height="44" />
@@ -19,7 +19,7 @@
 - **Chuyên môn & Vai trò:** Full-stack Web Development, UI/UX & Interactive Design, Digital Marketing & Conversion Flow, Security & QA Integration
 - **Liên hệ:** `khangcaheo300582@gmail.com` • Facebook: **Gra Yujaa**
 
-<img src="./public/admin-fkd.png" alt="Người phát triển - Yujaaz" width="180" />
+<img src="./public/admin-fkd.png?v=2" alt="Người phát triển - Yujaaz" width="180" />
 
 ---
 
@@ -28,7 +28,7 @@
 - Đặt lịch và theo dõi trạng thái lịch hẹn theo thời gian thực qua các bước **State 1 → State 2 → State 3**, nhận cập nhật tức thì từ phòng khám.
 
 <p align="center">
-  <img src="./public/baner-state.png" alt="Trạng thái lịch hẹn" width="100%" />
+  <img src="./public/baner-state.png?v=2" alt="Trạng thái lịch hẹn" width="100%" />
 </p>
 
 - Hiển thị dịch vụ theo từng nhóm dạng thẻ, giúp khách hàng chọn đúng dịch vụ phù hợp cho thú cưng.
@@ -62,13 +62,13 @@
 
 ## Công nghệ sử dụng
 
-| Nhóm                 | Công nghệ                                        |
-| -------------------- | ------------------------------------------------ |
-| Frontend & Framework | Next.js (App Router), React, TypeScript          |
-| Giao diện & Hiệu ứng | Tailwind CSS, Framer Motion                      |
-| Xác thực & Thông báo | NextAuth, Nodemailer (SMTP), SSE                 |
-| Bảo mật & Giám sát   | Sentry, Middleware, CSRF & Rate Limit Protection |
-| Kiểm thử & CI/CD     | Vitest, Playwright, GitHub Actions               |
+| Nhóm | Công nghệ |
+| --- | --- |
+| Frontend & Framework | Next.js (App Router), React, TypeScript |
+| Giao diện & Hiệu ứng | Tailwind CSS, Framer Motion |
+| Xác thực & Thông báo | NextAuth, Nodemailer (SMTP), SSE |
+| Bảo mật & Giám sát | Sentry, Middleware, CSRF & Rate Limit Protection |
+| Kiểm thử & CI/CD | Vitest, Playwright, GitHub Actions |
 
 ---
 
@@ -121,3 +121,6 @@ belwee-pet-clinic/
 ├── playwright.config.ts # Cấu hình e2e test
 └── README.md
 ```
+
+https://github.com/user-attachments/assets/93bc21d2-5fcc-412e-afde-b7560e4a642f
+
