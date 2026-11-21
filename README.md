@@ -80,32 +80,142 @@
 ---
  
 ## Hướng dẫn cài đặt và chạy dự án (Local)
- 
-1. **Clone repository** về máy:
+
+### Yêu cầu chung
+
+- **Node.js** 18.18 trở lên (khuyến nghị bản LTS 20)
+- **Git**
+- Trình soạn thảo bất kỳ (VS Code, v.v.)
+
+Kiểm tra đã cài chưa:
+
+```bash
+node -v
+npm -v
+git --version
+```
+
+<details open>
+<summary><b>🪟 Windows (PowerShell hoặc CMD)</b></summary>
+
+&nbsp;
+
+1. **Cài Node.js và Git** (bỏ qua nếu đã có):
+```powershell
+winget install OpenJS.NodeJS.LTS
+winget install Git.Git
+```
+Sau khi cài, mở lại terminal.
+
+2. **Clone và vào thư mục dự án:**
+```powershell
+git clone https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa.git
+cd demo-belwee-pet-clinic-by-yujaa
+```
+
+3. **Cài thư viện:**
+```powershell
+npm install
+```
+
+4. **Tạo file môi trường:**
+```powershell
+copy .env.example .env.local
+```
+Mở `.env.local` và điền database, SMTP, secret xác thực...
+
+5. **Chạy môi trường phát triển:**
+```powershell
+npm run dev
+```
+
+> Nếu PowerShell báo lỗi chặn script, chạy: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+
+</details>
+
+<details>
+<summary><b>🐧 Linux (Ubuntu/Debian và tương tự)</b></summary>
+
+&nbsp;
+
+1. **Cài Node.js và Git** (bỏ qua nếu đã có):
+```bash
+sudo apt update
+sudo apt install -y git curl
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+```
+
+2. **Clone và vào thư mục dự án:**
 ```bash
 git clone https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa.git
 cd demo-belwee-pet-clinic-by-yujaa
 ```
- 
-2. **Cài đặt thư viện:**
+
+3. **Cài thư viện:**
 ```bash
 npm install
 ```
- 
-3. **Cấu hình môi trường:** sao chép `.env.example` thành `.env.local`, rồi điền các giá trị cần thiết (database, SMTP, secret xác thực...).
+
+4. **Tạo file môi trường:**
 ```bash
 cp .env.example .env.local
+nano .env.local
 ```
- 
-4. **Khởi chạy** môi trường phát triển:
+
+5. **Chạy môi trường phát triển:**
 ```bash
 npm run dev
 ```
- 
-   Truy cập: http://localhost:3000
- 
----
- 
+
+</details>
+
+<details>
+<summary><b>🍎 macOS</b></summary>
+
+&nbsp;
+
+1. **Cài Node.js và Git** bằng [Homebrew](https://brew.sh) (bỏ qua nếu đã có):
+```bash
+brew install node git
+```
+
+2. **Clone và vào thư mục dự án:**
+```bash
+git clone https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa.git
+cd demo-belwee-pet-clinic-by-yujaa
+```
+
+3. **Cài thư viện:**
+```bash
+npm install
+```
+
+4. **Tạo file môi trường:**
+```bash
+cp .env.example .env.local
+open -e .env.local
+```
+
+5. **Chạy môi trường phát triển:**
+```bash
+npm run dev
+```
+
+</details>
+
+### Sau khi chạy
+
+Truy cập: http://localhost:3000
+
+### Lệnh hữu ích khác (mọi hệ điều hành)
+
+```bash
+npm run build         # Build bản production
+npm run start         # Chạy bản production sau khi build
+npm run test          # Chạy unit test (Vitest), nếu có script này
+npx playwright install   # Cài trình duyệt cho e2e test (chỉ cần chạy 1 lần)
+```
 ## Cấu trúc thư mục
  
 ```text
