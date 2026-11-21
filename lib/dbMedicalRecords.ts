@@ -53,7 +53,11 @@ export interface MedicalRecord {
   treatment?: string | null;
   staffId?: string | null;
   staffName?: string | null;
-  scheduledAt?: string | null; // ISO datetime
+  scheduledAt?: string | null; // ISO datetime (tương thích cũ)
+  /** Mốc tiêm vắc-xin/tiêm ngừa tiếp theo — đầu tuần nhắc engine gửi. Thay thế text trong `treatment`. */
+  nextDoseDueAt?: string | null;
+  /** Mốc tái khám/xét nghiệm định kỳ — đầu tuần nhắc engine gửi. */
+  followUpDueAt?: string | null;
   files: MedicalFile[];
   receipt?: Receipt | null;
   createdAt: string;
@@ -198,6 +202,7 @@ export async function ensureSeedMedicalRecords(): Promise<{ seeded: boolean }> {
       treatment: 'Tiếp tục chế độ ăn hiện tại, tái khám sau 6 tháng.',
       ...vet,
       scheduledAt: isoDaysFromNow(-14, 9),
+      followUpDueAt: isoDaysFromNow(6 * 30, 9),
       files: [],
       receipt: {
         id: generateId('RC'),
@@ -224,6 +229,8 @@ export async function ensureSeedMedicalRecords(): Promise<{ seeded: boolean }> {
       treatment: 'Nhắc lịch tiêm nhắc lại sau 1 năm.',
       ...vet,
       scheduledAt: isoDaysFromNow(-6, 15),
+      // Nhắc engine (data-driven, thay vì parse text trong treatment): tiêm lại sau 1 năm
+      nextDoseDueAt: isoDaysFromNow(365, 10),
       files: [],
       receipt: {
         id: generateId('RC'),
@@ -339,7 +346,7 @@ export const dbMedicalRecords = {
   },
 
   /** Partial update of a record. Returns undefined when id not found. */
-  async update(id: string, patch: Partial<Pick<MedicalRecord, 'status' | 'diagnose' | 'treatment' | 'staffId' | 'staffName' | 'files' | 'receipt' | 'scheduledAt'>>): Promise<MedicalRecord | undefined> {
+  async update(id: string, patch: Partial<Pick<MedicalRecord, 'status' | 'diagnose' | 'treatment' | 'staffId' | 'staffName' | 'files' | 'receipt' | 'scheduledAt' | 'nextDoseDueAt' | 'followUpDueAt'>>): Promise<MedicalRecord | undefined> {
     return recordStore.update((rows) => {
       const record = rows.find((candidate) => candidate.id === id);
       if (!record) return undefined;

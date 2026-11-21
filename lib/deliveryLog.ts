@@ -7,7 +7,7 @@
 import { createAsyncJsonStore } from './jsonStore';
 import type { NotificationChannel, NotificationTypeCode, NotificationScope } from './notificationQueue';
 
-export type DeliveryEvent = 'queued' | 'sent' | 'opened' | 'clicked' | 'unsubscribed';
+export type DeliveryEvent = 'queued' | 'sent' | 'failed' | 'opened' | 'clicked' | 'unsubscribed';
 
 export interface DeliveryLogEntry {
   id: string;
@@ -49,7 +49,7 @@ const store = createAsyncJsonStore<DeliveryLogEntry>('delivery-logs.json', (raw)
         return { type: type2 as DeliveryLogEntry['scope']['type'], entityId: String(row2?.entityId ?? '') };
       })(),
       channel: (['email', 'desktop', 'push'] as const).find((c) => c === row.channel) ?? 'email',
-      event: (['queued', 'sent', 'opened', 'clicked', 'unsubscribed'] as const).find((e) => e === row.event) ?? 'queued',
+      event: (['queued', 'sent', 'failed', 'opened', 'clicked', 'unsubscribed'] as const).find((e) => e === row.event) ?? 'queued',
       at: typeof row.at === 'string' ? row.at : new Date(0).toISOString(),
       detail: typeof row.detail === 'string' ? row.detail : null,
     }));
@@ -99,8 +99,35 @@ export const dbDeliveryLog = {
     return Array.from(counts.entries()).map(([key, value]) => ({ key, value }));
   },
 
+  async markSent(logId: string): Promise<void> {
+    await store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === logId);
+      if (row && row.event === 'queued') row.event = 'sent';
+    });
+  },
+
   /** Mở email — dùng tracking pixel (dựa id log unique per item+channel). */
   async findByQueueIdChannel(queueId: string, channel: NotificationChannel): Promise<DeliveryLogEntry | undefined> {
-    return (await store.read()).find((row) => row.queueId === queueId && row.channel === channel && row.event === 'sent');
+    return (await store.read())
+      .filter((row) => row.queueId === queueId && row.channel === channel)
+      .sort((a, b) => a.at.localeCompare(b.at))
+      .at(-1);
+  },
+
+  async markFailed(logId: string, error: string): Promise<void> {
+    await store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === logId);
+      if (row) {
+        row.event = 'failed';
+        row.detail = error.slice(0, 500);
+      }
+    });
+  },
+
+  async markUnsubscribed(logId: string): Promise<void> {
+    await store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === logId);
+      if (row) row.event = 'unsubscribed';
+    });
   },
 };

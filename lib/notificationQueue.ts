@@ -111,8 +111,10 @@ export const dbNotificationQueue = {
     return store.update((rows) => {
       const existing = rows.find((row) => row.idempotencyKey === key);
       if (existing) {
-        // Recompute nếu cần: cập nhật gần gũi nhất từ caller khi chưa gửi thành công
-        if (!(SENT_TYPES as readonly string[]).includes(existing.status)) {
+        // Enqueue idempotent: chỉ mãi CANCELLED/SENT là dùng kết quả cũ.
+        // FAILED/QUEUED → cập nhật gần gũi nhất từ caller và quay về QUEUED.
+        if (existing.status !== 'SENT' && existing.status !== 'CANCELLED') {
+          existing.status = 'QUEUED';
           existing.sendAt = input.sendAt;
           existing.channels = input.channels ?? existing.channels;
           existing.topic = input.topic;
@@ -158,7 +160,17 @@ export const dbNotificationQueue = {
       const row = rows.find((candidate) => candidate.id === id && candidate.status === 'QUEUED');
       if (!row) return false;
       if (!row.sentChannels.includes(channel)) row.sentChannels.push(channel);
-      if (row.sentChannels.length >= row.channels.length && row.sentChannels.length > 0) {
+      row.updatedAt = new Date().toISOString();
+      return true;
+    });
+  },
+
+  /** Đóng row khi tất cả channels đã thành công. */
+  async markComplete(id: string): Promise<boolean> {
+    return store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === id && candidate.status === 'QUEUED');
+      if (!row) return false;
+      if (row.channels.length > 0 && row.channels.every((c) => row.sentChannels.includes(c))) {
         row.status = 'SENT';
         row.sentAt = new Date().toISOString();
         row.lastError = null;
