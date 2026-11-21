@@ -42,8 +42,6 @@ export interface NotificationQueueItem {
  * Những hàng đã gửi thành công chưa nhận lại lần 2 (engine không gửi lặp lại
  * một item đã được markSent). FAILED giữ lại cải thiện thông tin cho operator.
  */
-const SENT_TYPES = ['SENT', 'CANCELLED'] as const;
-
 const CHANNEL_CODES = ['email', 'desktop', 'push'] as const;
 
 function generateId(): string {
@@ -111,8 +109,8 @@ export const dbNotificationQueue = {
     return store.update((rows) => {
       const existing = rows.find((row) => row.idempotencyKey === key);
       if (existing) {
-        // Recompute nếu cần: cập nhật gần gũi nhất từ caller khi chưa gửi thành công
-        if (!(SENT_TYPES as readonly string[]).includes(existing.status)) {
+        if (existing.status !== 'SENT' && existing.status !== 'CANCELLED') {
+          existing.status = 'QUEUED';
           existing.sendAt = input.sendAt;
           existing.channels = input.channels ?? existing.channels;
           existing.topic = input.topic;
@@ -158,7 +156,17 @@ export const dbNotificationQueue = {
       const row = rows.find((candidate) => candidate.id === id && candidate.status === 'QUEUED');
       if (!row) return false;
       if (!row.sentChannels.includes(channel)) row.sentChannels.push(channel);
-      if (row.sentChannels.length >= row.channels.length && row.sentChannels.length > 0) {
+      row.updatedAt = new Date().toISOString();
+      return true;
+    });
+  },
+
+  /** Đóng row khi tất cả channels đã thành công. */
+  async markComplete(id: string): Promise<boolean> {
+    return store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === id && candidate.status === 'QUEUED');
+      if (!row) return false;
+      if (row.channels.length > 0 && row.channels.every((c) => row.sentChannels.includes(c))) {
         row.status = 'SENT';
         row.sentAt = new Date().toISOString();
         row.lastError = null;
@@ -248,6 +256,19 @@ export const dbNotificationQueue = {
       failed: count('FAILED'),
       sentByChannel,
     };
+  },
+
+  /** Admin: reset một row FAILED về QUEUED để admin có thể retry nó thủ công. */
+  async markRetryable(id: string): Promise<boolean> {
+    return store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === id);
+      if (!row) return false;
+      row.status = 'QUEUED';
+      row.attempts = 0;
+      row.lastError = null;
+      row.updatedAt = new Date().toISOString();
+      return true;
+    });
   },
 
   async retryAllFailed(): Promise<number> {
