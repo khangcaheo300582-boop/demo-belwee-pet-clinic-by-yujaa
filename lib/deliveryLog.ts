@@ -99,10 +99,28 @@ export const dbDeliveryLog = {
     return Array.from(counts.entries()).map(([key, value]) => ({ key, value }));
   },
 
+  async findByLogId(id: string): Promise<DeliveryLogEntry | undefined> {
+    return (await store.read()).find((row) => row.id === id);
+  },
+
   async markSent(logId: string): Promise<void> {
     await store.update((rows) => {
       const row = rows.find((candidate) => candidate.id === logId);
       if (row && row.event === 'queued') row.event = 'sent';
+    });
+  },
+
+  async markOpened(logId: string): Promise<void> {
+    await store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === logId);
+      if (row && (row.event === 'queued' || row.event === 'sent')) row.event = 'opened';
+    });
+  },
+
+  async markClicked(logId: string): Promise<void> {
+    await store.update((rows) => {
+      const row = rows.find((candidate) => candidate.id === logId);
+      if (row && ['queued', 'sent', 'opened'].includes(row.event)) row.event = 'clicked';
     });
   },
 

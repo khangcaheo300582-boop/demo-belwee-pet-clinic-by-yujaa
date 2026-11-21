@@ -11,13 +11,15 @@ import { userChannel } from '../channels';
 import type { NotificationQueueItem, NotificationTypeCode } from '../notificationQueue';
 import type { EngineItem } from './emailAdapter';
 
-const TYPE_TITLES: Record<NotificationTypeCode, string> = {
+export const TYPE_LABELS: Record<NotificationTypeCode, string> = {
   appointment: 'NHẮC LỊCH HẸN',
   vaccination: 'NHẮC TIÊM VẮC-XIN',
   followUp: 'NHẮC TÁI KHÁM',
   payment: 'NHẮC THANH TOÁN',
   care: 'NHẮC CHĂM SÓC',
 };
+
+const TYPE_TITLES = TYPE_LABELS;
 
 export interface DesktopAdapterResult {
   ok: boolean;
