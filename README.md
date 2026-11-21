@@ -206,7 +206,7 @@ npm run dev
 
 ### Sau khi chạy
 
-Truy cập: http://localhost:3000
+Truy cập: http://localhost:3001
 
 ### Lệnh hữu ích khác (mọi hệ điều hành)
 
