@@ -2,10 +2,6 @@
   <img src="./public/belwee-logo-intro.webp" alt="Belwee Intro Logo" width="560" />
 </p>
 # Belwee Pet Clinic — Web Platform
- 
-<p align="center">
-  <a href="https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa/raw/main/public/belwee-logo-intro-a.mp4">▶ Xem video intro có tiếng</a>
-</p>
 <table>
   <tr>
     <td width="68%" valign="middle">
