@@ -1,5 +1,9 @@
 # Belwee Pet Clinic — Web Platform
 
+
+https://github.com/user-attachments/assets/e4632983-0dc5-4ed2-8b7d-b5556a60a58d
+
+
 > **Video Intro Logo:** [Xem `belwee-logo-intro-a.mp4`](https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa/raw/main/public/belwee-logo-intro-a.mp4)
 
 <p align="left">
@@ -122,5 +126,5 @@ belwee-pet-clinic/
 └── README.md
 ```
 
-https://github.com/user-attachments/assets/93bc21d2-5fcc-412e-afde-b7560e4a642f
+
 
