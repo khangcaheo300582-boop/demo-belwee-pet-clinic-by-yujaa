@@ -44,7 +44,7 @@
  
 - **Đặt lịch và theo dõi trạng thái lịch hẹn theo thời gian thực** qua các bước **State 1 → State 2 → State 3**, khách hàng nhận cập nhật tức thì từ phòng khám.
 <p align="center">
-  <img src="./public/axbc.png" alt="Trạng thái lịch hẹn" width="100%" />
+  <img src="./public/abxc.png" alt="Trạng thái lịch hẹn" width="100%" />
 </p>
 - **Danh mục dịch vụ theo nhóm** dạng thẻ, giúp khách hàng chọn đúng dịch vụ phù hợp cho thú cưng.
 <p align="center">
