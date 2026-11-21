@@ -25,95 +25,99 @@
 
 ## TÍNH NĂNG
 
-### 1. Chat & Hỗ trợ trực tiếp với khách hàng
+- Đặt lịch và theo dõi trạng thái lịch hẹn theo thời gian thực qua các bước **State 1 → State 2 → State 3**, nhận cập nhật tức thì từ phòng khám.
 
-Kênh nhắn tin và hỗ trợ trực tiếp giúp khách hàng trao đổi nhanh với đội ngũ tư vấn viên, gửi câu hỏi về tình trạng sức khỏe thú cưng và nhận phản hồi kịp thời.
-
-<p>
-  <img src="./public/baner-state.png" alt="Trạng thái Chat - State 1, State 2, State 3" width="48%" />
-  <img src="./public/state.png" alt="Chi tiết trạng thái hỗ trợ" width="48%" />
+<p align="center">
+  <img src="./public/baner-state.png" alt="Trạng thái lịch hẹn" width="100%" />
 </p>
 
-### 2. Đặt lịch khám & Dịch vụ
+- Hiển thị dịch vụ theo từng nhóm dạng thẻ, giúp khách hàng chọn đúng dịch vụ phù hợp cho thú cưng.
 
-Hỗ trợ khách hàng lựa chọn dịch vụ, theo dõi thông tin lịch hẹn và thao tác đặt lịch thuận tiện trên giao diện web.
-
-<img src="./public/baner-dich-vu.png" alt="Banner dịch vụ và đặt lịch" width="100%" />
-
-### 3. Thông báo thông minh
-
-Cập nhật thông báo, nhắc nhở và trạng thái tương tác để khách hàng nắm bắt thông tin nhanh chóng.
-
-<img src="./public/png" alt="Minh họa thông báo thông minh" width="100%" />
-
-### 4. Kiến thức thú y & Cổng thông tin phòng khám
-
-Cung cấp bài viết kiến thức thú y, thông tin dịch vụ và các chi nhánh phòng khám phục vụ khách hàng.
-
-<p>
-  <img src="./public/ktty1.png" alt="Kiến thức thú y 1" width="48%" />
-  <img src="./public/ktty2.png" alt="Kiến thức thú y 2" width="48%" />
+<p align="center">
+  <img src="./public/baner-dich-vu.png" alt="Danh mục dịch vụ" width="100%" />
 </p>
 
-### 5. Phân quyền & Cổng nội bộ (`staff`)
+- Giao diện trang chủ và kết nối thú y, tối ưu chuyển đổi khách hàng.
 
-Khu vực làm việc dành cho nhân viên và quản trị viên để xử lý nghiệp vụ và vận hành hệ thống.
-
-<p>
-  <img src="./public/%E1%BA%A3nh%20%C4%91%C3%A3%20ch%E1%BB%A5p%20m%C3%A0n%20h%C3%ACnh%20ph%C3%A2n%20quy%E1%BB%81n%201" alt="Phân quyền 1" width="48%" />
-  <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%202.png" alt="Phân quyền 2" width="48%" />
+<p align="center">
+  <img src="./public/ktty1.png" alt="Giao diện 1" width="49%" />
+  <img src="./public/ktty2.png" alt="Giao diện 2" width="49%" />
 </p>
 
-_(Lưu ý: Nếu file ảnh đầu tiên trong thư mục `public/` của bạn có tên chính xác là `phân quyền 1.png`, hãy đổi đường dẫn tương ứng thành `./public/ph%C3%A2n%20quy%E1%BB%81n%201.png`)._
+- Giám sát hệ thống: theo dõi hoạt động, ghi log và phát hiện bất thường để vận hành ổn định.
 
-### 6. Giám sát hệ thống & Bảo mật
-
-Theo dõi hoạt động hệ thống, kiểm soát bảo mật và hỗ trợ phát hiện sự cố kịp thời.
-
-<p>
-  <img src="./public/Gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%201.png" alt="Giám sát hệ thống 1" width="48%" />
-  <img src="./public/gi%C3%A1m%20s%C3%A1t%20h%E1%BB%99%20th%E1%BB%91ng%202.png" alt="Giám sát hệ thống 2" width="48%" />
+<p align="center">
+  <img src="./public/Gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%201.png" alt="Giám sát hệ thống 1" width="49%" />
+  <img src="./public/gi%C3%A1m%20s%C3%A1t%20h%E1%BB%87%20th%E1%BB%91ng%202.png" alt="Giám sát hệ thống 2" width="49%" />
 </p>
 
-_(Lưu ý: Nếu file ảnh thứ hai trong `public/` có tên là `giám sát hệ thống 2.png`, hãy cập nhật lại chữ `hệ` thay cho `hộ` trên đường dẫn trên)._
+- Phân quyền truy cập theo vai trò (quản trị, nhân viên, khách hàng), đúng người đúng chức năng.
+
+<p align="center">
+  <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%201.png" alt="Phân quyền 1" width="49%" />
+  <img src="./public/ph%C3%A2n%20quy%E1%BB%81n%202.png" alt="Phân quyền 2" width="49%" />
+</p>
 
 ---
 
 ## Công nghệ sử dụng
 
-| Nhóm                      | Công nghệ                                        |
-| :------------------------ | :----------------------------------------------- |
-| **Frontend & Framework**  | Next.js (App Router), React, TypeScript          |
-| **Giao diện & Hiệu ứng**  | Tailwind CSS, PostCSS                            |
-| **Xác thực & Thông báo**  | NextAuth, Email OTP / SMTP                       |
-| **Bảo mật & Giám sát**    | Sentry, Middleware, CSRF & Rate-Limit Protection |
-| **Kiểm thử & Chất lượng** | Vitest, Playwright, ESLint, Husky                |
+| Nhóm                 | Công nghệ                                        |
+| -------------------- | ------------------------------------------------ |
+| Frontend & Framework | Next.js (App Router), React, TypeScript          |
+| Giao diện & Hiệu ứng | Tailwind CSS, Framer Motion                      |
+| Xác thực & Thông báo | NextAuth, Nodemailer (SMTP), SSE                 |
+| Bảo mật & Giám sát   | Sentry, Middleware, CSRF & Rate Limit Protection |
+| Kiểm thử & CI/CD     | Vitest, Playwright, GitHub Actions               |
 
 ---
 
 ## Hướng dẫn cài đặt và chạy dự án (Local)
 
-1. **Clone repository về máy:**
-   Chạy lệnh `git clone https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa.git` và di chuyển vào thư mục dự án.
+1. **Clone repository** về máy:
 
-2. **Cài đặt các gói thư viện:**
-   Chạy lệnh `npm install` tại thư mục gốc `belwee-pet-clinic`.
+   ```bash
+   git clone https://github.com/khangcaheo300582-boop/demo-belwee-pet-clinic-by-yujaa.git
+   cd demo-belwee-pet-clinic-by-yujaa
+   ```
 
-3. **Cấu hình biến môi trường:**
-   Tạo file `.env.local` từ file mẫu `.env.example` và điền đầy đủ các thông số kết nối.
+2. **Cài đặt thư viện:**
 
-4. **Khởi chạy môi trường phát triển:**
-   Chạy lệnh `npm run dev`, sau đó mở trình duyệt tại địa chỉ `http://localhost:3000`.
+   ```bash
+   npm install
+   ```
+
+3. **Cấu hình môi trường:** sao chép `.env.example` thành `.env.local` rồi điền các giá trị cần thiết (database, SMTP, secret xác thực...).
+
+   ```bash
+   cp .env.example .env.local
+   ```
+
+4. **Khởi chạy** môi trường phát triển:
+
+   ```bash
+   npm run dev
+   ```
+
+   Truy cập: http://localhost:3000
 
 ---
 
 ## Cấu trúc thư mục
 
-- `app/` — Hệ thống định tuyến (App Router), các trang giao diện người dùng, cổng `staff` và API routes
-- `components/` — Các thành phần giao diện tái sử dụng
-- `hooks/` — Custom React hooks xử lý tương tác và trạng thái giao diện
-- `lib/` — Các module xử lý logic nghiệp vụ và tiện ích dùng chung
-- `public/` — Tài nguyên tĩnh (hình ảnh, biểu tượng, media)
-- `security/` — Cấu hình bảo mật, kiểm soát CSRF, rate-limit và xác thực request
-- `scripts/` — Các script tự động hóa kiểm tra và xác minh hệ thống
-- `tests/` — Bộ kiểm thử API contract và kiểm thử đầu cuối (E2E)
+```text
+belwee-pet-clinic/
+├── app/               # Next.js App Router: pages, layouts, API routes
+│   ├── api/           # Route handlers (API)
+│   └── (pages)/       # Các trang giao diện
+├── components/        # Component giao diện dùng chung
+├── lib/               # Logic nghiệp vụ, tiện ích, cấu hình
+├── public/            # Ảnh, video, logo, service worker (sw.js)
+├── screenshots/       # Ảnh chụp màn hình dự án
+├── middleware.ts      # Middleware xác thực, bảo mật
+├── next.config.mjs    # Cấu hình Next.js
+├── tailwind.config.ts # Cấu hình Tailwind CSS
+├── vitest.config.ts   # Cấu hình unit test
+├── playwright.config.ts # Cấu hình e2e test
+└── README.md
+```
