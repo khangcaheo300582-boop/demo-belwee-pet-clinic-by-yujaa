@@ -5,18 +5,18 @@
 // userChannel — identical shape to bookingEvents.notifyBookingStatus so the
 // existing BookingNotificationListener + toast UI render it unchanged.
 
-import { dbNotifications } from '../dbNotifications';
-import { publish } from '../realtime';
-import { userChannel } from '../channels';
-import type { NotificationQueueItem, NotificationTypeCode } from '../notificationQueue';
-import type { EngineItem } from './emailAdapter';
+import { userChannel } from "../channels";
+import { dbNotifications } from "../dbNotifications";
+import type { NotificationTypeCode } from "../notificationQueue";
+import { publish } from "../realtime";
+import type { EngineItem } from "./emailAdapter";
 
 export const TYPE_LABELS: Record<NotificationTypeCode, string> = {
-  appointment: 'NHẮC LỊCH HẸN',
-  vaccination: 'NHẮC TIÊM VẮC-XIN',
-  followUp: 'NHẮC TÁI KHÁM',
-  payment: 'NHẮC THANH TOÁN',
-  care: 'NHẮC CHĂM SÓC',
+  appointment: "NHẮC LỊCH HẸN",
+  vaccination: "NHẮC TIÊM VẮC-XIN",
+  followUp: "NHẮC TÁI KHÁM",
+  payment: "NHẮC THANH TOÁN",
+  care: "NHẮC CHĂM SÓC",
 };
 
 const TYPE_TITLES = TYPE_LABELS;
@@ -30,13 +30,16 @@ export interface DesktopAdapterResult {
  * Toast thông báo cho khách đang mở tab/browser (desktop/iPad/laptop).
  * Toast chỉ hiển thị khi khách đã đăng nhập — giống hệ thống toast hiện có.
  */
-export async function sendDesktopToast(item: EngineItem, logId?: string): Promise<DesktopAdapterResult> {
+export async function sendDesktopToast(
+  item: EngineItem,
+  logId?: string,
+): Promise<DesktopAdapterResult> {
   const title = TYPE_TITLES[item.type] || item.type;
-  const body = [item.petName, item.topic].filter(Boolean).join(' · ');
+  const body = [item.petName, item.topic].filter(Boolean).join(" · ");
 
   const notification = await dbNotifications.create({
     email: item.ownerEmail,
-    kind: 'booking-confirmed',
+    kind: "booking-confirmed",
     bookingId: item.scope.entityId,
     title,
     body,
@@ -46,12 +49,12 @@ export async function sendDesktopToast(item: EngineItem, logId?: string): Promis
 
   // Live toast (SSE). Lục hoặc logId nếu hệ thống sau này muốn tracking cho toast.
   void logId;
-  publish(userChannel(item.ownerEmail), 'booking-status', {
+  publish(userChannel(item.ownerEmail), "booking-status", {
     ...notification,
     petName: item.petName,
     time: item.topic,
     service: item.topic,
-    status: 'CONFIRMED',
+    status: "CONFIRMED",
     confirmedBy: null,
   });
   return { ok: true };
